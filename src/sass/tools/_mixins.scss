@@ -1,0 +1,73 @@
+@use 'settings/variables' as v;
+
+// RESPONSIVE
+@mixin telefono-m {
+    @media (min-width: map-get(v.$medidas, telefono-m)){
+        @content;
+    }
+}
+@mixin telefono-xl {
+    @media (min-width: map-get(v.$medidas, telefono-xl)){
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: map-get(v.$medidas, tablet)){
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: map-get(v.$medidas, desktop)){
+        @content;
+    }
+}
+@mixin desktop-m {
+    @media (min-width: map-get(v.$medidas, desktop-m)){
+        @content;
+    }
+}
+@mixin desktop-xl {
+    @media (min-width: map-get(v.$medidas, desktop-xl)){
+        @content;
+    }
+}
+@mixin dark-mode {
+    @media (prefers-color-scheme: dark){
+        @content;
+    }
+}
+
+// GRID
+@mixin grid ($num-columnas, $espaciado-gap) {
+    display: grid;
+    grid-template-columns: repeat($num-columnas, 1fr);
+    gap: $espaciado-gap;
+}
+
+// FLEX
+@mixin flex ($flex-direction, $flex-wrap, $justify-content, $align-items) {
+    display: flex;
+    flex-flow: $flex-direction $flex-wrap;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+// NEOMORFISMO
+// https://neumorphism.io/ para usar los colores en fondo-sombra1-sombra2
+@mixin neomorfismo ($color-fondo, $color-borde, $radio-borde, $efecto-sombra:null, $eje, $color-sombra1, $color-sombra2) {
+    background-color: $color-fondo;
+    border: 2px solid $color-borde; // NORMALMENTE EL COLOR SOBRE EL QUE SE POSA EL BOTON
+    border-radius: $radio-borde;
+    box-shadow: $efecto-sombra $eje $eje ($eje*2) $color-sombra1, $efecto-sombra (-$eje) (-$eje) ($eje*2) $color-sombra2;
+    transition: all 1s ease;
+}
+
+// POSITION
+@mixin position ($position, $top:null, $right:null, $bottom:null, $left:null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+

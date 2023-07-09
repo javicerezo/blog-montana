@@ -1,0 +1,24 @@
+
+/*  tamaños para media queries (desde este tamaño en adelante, ej: @media (min-width: $tablet) */
+$medidas: (
+    "telefono-m": 320px,
+    "telefono-xl": 480px, //por encima pasamos a tablet
+    "tablet": 768px,
+    "desktop": 960px, // por encima pasamos a ordenador
+    "desktop-m": 1024px,
+    "desktop-xl": 1440px
+);
+
+/* fuente principal */
+$fuentes: (
+    "tipo-principal": Helvetica Arial sans-serif,
+    "tipo-secundaria": Verdana
+);
+
+/* colores */
+$colores: (
+    "color-primario": #000,
+    "color-primario-2": #181818,
+    "color-secundario": #fff,
+    "color-secundario-2": #f1f1f1
+); 
