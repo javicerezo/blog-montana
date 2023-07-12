@@ -1,0 +1,22 @@
+.c-button {
+    @include flex (row, nowrap, center, center);
+    padding: .625rem 1.5625rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    &--amarillo {
+        background-color: map-get($colores, color-fondo);
+        transition: color 0.5s ease, background-color 0.5s ease;
+        &:hover {
+            background-color: map-get($colores, color-primario);
+            color: map-get($colores, color-secundario);            
+            i {
+                color: map-get($colores, color-secundario);
+            }
+        }
+        i {
+            color: map-get($colores, color-primario);
+        }
+    }
+}

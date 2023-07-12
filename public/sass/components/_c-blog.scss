@@ -1,0 +1,214 @@
+.c-blog {
+    @include flex (column, nowrap, center, center);
+    &__contenedor {
+        width: 95%;
+        @include tablet {
+            width: 100%;
+            margin: 1rem 0;
+        }
+        @include desktop {
+            margin: 2rem 0;
+            width: 80%;
+        }
+    }
+    &__cabecera {
+        @include flex(column, nowrap, space-between, center);
+        margin: 1rem 0.5rem;
+        @include desktop {
+            @include flex(row, nowrap, space-between, center);
+            margin: 2rem 0;
+        }
+    }
+    &__titular{
+        width: 100%;
+        @include flex(row, nowrap, space-between, center);
+        &-h1 {
+            font-size: 1.7em;
+            font-weight: bold;
+            @include tablet {
+                font-size: 2.1em;
+            }
+            @include desktop {
+                font-size: 2.5em;
+            }
+        }
+        &-li {
+            font-size: 1.5em;
+            cursor: pointer;
+            color: map-get($colores, color-gris);
+            &--mod {
+                color: map-get($colores, color-primario);
+            }
+            @include desktop {
+                display: none;
+            }
+        }
+    }
+    &__buscador {
+        @include flex(row, nowrap, center, center);
+        position: relative;
+        color: map-get($colores, color-gris);
+        &-li {
+            display: none;
+            margin-right: 1rem;
+            font-size: 1.5em;
+            cursor: pointer;
+            &:hover {
+                color: map-get($colores, color-primario);
+            }
+            @include desktop {
+                display: block;
+            }
+        }
+        &-li:last-child {
+            display: block;
+            margin-right: 0;
+            color: map-get($colores, color-primario);
+            &:hover {
+                color: map-get($colores, color-fondo-hover);
+            }
+        }
+        &-cuadro {
+            @include flex(row, nowrap, center, center);
+            width: 100%;
+            margin: 1.5rem;
+            @include desktop {
+                margin: 0;
+            }
+            &-li {
+                font-size: 1em;
+                padding: 0.5rem;
+                margin-right: 0.5rem;
+                border-radius: 5px;
+                color: map-get($colores, color-primario);
+                @include tablet {
+                    font-size: 1.5em;
+                }
+            }
+            &-li:first-child {
+                border: 1px solid map-get($colores, color-gris);
+            }
+        }
+    }
+    &__contenedor2 {
+        margin: 1rem 0;
+        overflow: hidden;
+        &--mod {
+            margin: 1rem 0;
+        }
+        @include desktop {
+            margin: 2rem 0;
+        }
+    }
+    &__categoria {
+        font-size: 1.5rem;
+        padding: 1rem;
+        border-bottom: 2px solid map-get($colores, color-gris); 
+        color: map-get($colores, color-primario-2); 
+        margin: 1rem 0;
+        @include flex(row, nowrap, flex-start, center);
+        h5 {
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 1rem;
+            &:hover {
+                color: map-get($colores, color-gris); 
+            }
+        }
+        i {
+            font-size: 0.6em;
+        }
+        @include desktop {
+            font-size: 2rem;
+        }
+    }
+    &__ul {
+        @include flex(row, nowrap, flex-start, center);
+        border-bottom: 1px solid map-get($colores, color-gris);
+    }
+    &__li {
+        margin: 1rem 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        background-color: map-get($colores, color-secundario-2);
+        cursor: pointer;
+        @include desktop {
+            background-color: map-get($colores, color-secundario);
+            border-radius: 0;
+            margin: 0;
+            padding: 1rem;
+            font-size: 1.2em;
+            font-weight: bold;
+            &:hover {
+                border-bottom: 2px solid map-get($colores, color-gris);
+            }
+        }
+    }
+    &__grid {
+        @include grid(1, 1rem);
+        @include tablet {
+            margin: 1rem;
+            @include grid(2, 1rem);
+        }
+        &--mod {
+            @include grid(1, 1rem);
+            @include tablet {
+                margin: 1rem;
+                @include grid(4, 1rem);
+            }
+        }
+        &--mod2 {
+            @include grid(1, 0.5rem);
+            @include tablet {
+                margin: 1rem;
+            }
+        }
+    }
+    &__masnoticias {
+        @include flex(column, nowrap, center, center);
+        @include desktop {
+            @include flex(row, nowrap, center, center);
+        }
+    }
+    &__noticia {
+        
+        max-width: 37.5rem;
+        @include flex(column, nowrap, center, center);
+        margin: 0 auto;
+        margin-bottom: 1.5rem;
+            &--mod {
+                @include flex(row, nowrap, center, center);
+            }
+        &-img {
+            &--mod {
+                max-width: 12.5rem;
+            }
+            @include desktop {
+                max-width: none;
+            }
+        }
+        &-contenido {
+            &--mod {
+                margin: 1rem;
+            }   
+        }
+        &-titulo {
+            font-size: 1.6em;
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+        &-cuadro {
+            @include flex(row, nowrap, flex-start, center);
+        }
+        &-categoria {
+            color: map-get($colores, color-fondo-hover);
+            margin-right: 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        &-fecha {
+            margin: 0.5rem 0;
+            color: map-get($colores, color-gris);
+        }
+    }
+}

@@ -1,0 +1,35 @@
+
+/*  tamaños para media queries (desde este tamaño en adelante, ej: @media (min-width: $tablet) */
+$medidas: (
+    "telefono-m": 320px,
+    "telefono-xl": 480px, //por encima pasamos a tablet
+    "tablet": 768px,
+    "desktop": 960px, // por encima pasamos a ordenador
+    "desktop-m": 1024px,
+    "desktop-xl": 1440px
+);
+
+/* fuente principal */
+$fuentes: (
+    "tipo-principal": Helvetica Arial sans-serif,
+    "tipo-secundaria": Verdana
+);
+
+/* colores */
+$colores: (
+    "color-primario": #181818,
+    "color-primario-2": #000,
+    "color-secundario": #fff,
+    "color-secundario-2": #f1f1f1,
+    "color-azul": blue,
+    "color-fondo": #ffcc00,
+    "color-fondo-hover": #ffc400,
+    "color-fondo-active": #efbc00,
+    "color-fondo-iconos":#fff0ad,
+    "color-precios": #990000,
+    "color-gris": #999,
+    "color-gris-claro": #ddd,
+    "color-texto-formulario":  #723f00,
+    "color-texto-formulario2": #556575,
+    "color-borde-cesta": #4a4a4a
+);

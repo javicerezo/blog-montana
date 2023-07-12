@@ -1,0 +1,37 @@
+.c-footer {
+    background-color: map-get($colores, color-primario);  
+    padding: 2rem 0;      
+    &__contenedor {
+        margin: 0 auto;
+        width: 90%;
+        color: map-get($colores, color-gris);
+        @include flex (column, nowrap, space-between, center);
+        @include tablet {
+            width: 75%;
+        }
+    }
+    &__ul {
+        @include flex (row, nowrap, center, center);
+        padding-bottom: 1rem;
+    }
+    &__li {
+        padding: 0 1rem;
+        font-size: 1.5em;
+        @include tablet {
+            font-size: 2em;
+        }
+        a {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            &:hover {
+                color: map-get($colores, color-gris-claro);
+            }
+        }
+    }
+    &__copy {
+        font-size: 0.85em;
+        @include tablet {
+            font-size: 1em;
+        }
+    }
+}

@@ -3,14 +3,8 @@
 
 ## Ejemplo en vivo
 - [URL-de-github-pages-de-este-proyecto](URL-de-github-pages-de-este-proyecto) 🚀
-- [URL-de-la-api](URL-de-la-api)
 
 ## Descripción 📑
-
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. A voluptatum et esse, ipsum ipsam debitis ducimus dolorum placeat? Consectetur, soluta vero. Accusamus iure est pariatur, doloremque nam cumque natus unde adipisci laborum ut. At id sapiente consequatur earum. Magnam doloribus, voluptate zumito doloremque obcaecati vel excepturi numquam cupiditate ipsam quisquam!
-
-## ¿Qué he aprendido en este proyecto? 🙇🏻 
-
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. A voluptatum et esse, ipsum ipsam debitis ducimus dolorum placeat? Consectetur, soluta vero. Accusamus iure est pariatur, doloremque nam cumque natus unde adipisci laborum ut. At id sapiente consequatur earum. Magnam doloribus, voluptate zumito doloremque obcaecati vel excepturi numquam cupiditate ipsam quisquam!
 
 ## Tecnologías 🛠
@@ -36,8 +30,6 @@ Si quieres hechar un vistazo al proyecto, te recomiendo:
 **TU NOMBRE**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/javicerezo/)
-[Behance](https://www.behance.net/tu-url-de-behance)
-[Dribble](https://www.dribble.com/tu-url-de-dribble)
 [![Porfolio web](https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://javicerezo.netlify.app/)
 [![Correo](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](<mailto:jc.webmob@gmail.com>)
 
