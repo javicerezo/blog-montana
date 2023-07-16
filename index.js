@@ -23,6 +23,9 @@ app.use((req, res, next) => {
     next();
 })
 
+// agregar body parser para leer datos de los formularios
+app.use(express.urlencoded({extended: true}));
+
 //AGREGAR LA CARPETA PUBLIC
 app.use(express.static('public'));
 

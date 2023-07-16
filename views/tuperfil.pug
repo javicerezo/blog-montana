@@ -1,5 +1,36 @@
 extends ./layout/index
 
 block contenido
-    h1 tuperfil 
-    p #{pagina}
+    div.c-tuperfil
+        div.c-tuperfil__contenedor
+            div.c-tuperfil__izq
+                div.c-tuperfil__izq-cabecera
+                    div.c-tuperfil__izq-cabecera-div
+                        img(src="assets/img/sinperfil.jpeg")
+                    p.c-tuperfil__izq-cabecera-nombre Nombre y apellidos
+                    p.c-tuperfil__izq-cabecera-profesion Profesión
+                div.c-tuperfil__izq-contenido
+                    p.c-tuperfil__izq-contenido-p Mi perfil
+                    p.c-tuperfil__izq-contenido-p Fotografía
+                    p.c-tuperfil__izq-contenido-p Rutas favoritas
+                    p.c-tuperfil__izq-contenido-p Mi perfil
+                    p.c-tuperfil__izq-contenido-p Mi perfil
+                    p.c-tuperfil__izq-contenido-p Mi perfil
+                    p.c-tuperfil__izq-contenido-p Cerrar cuenta
+            div.c-tuperfil__der
+                div.c-tuperfil__der-cabecera
+                    h1.c-tuperfil__der-cabecera-h1 Perfil público 
+                    h4.c-tuperfil__der-cabecera-h4 Añade información sobre ti 
+                div.c-tuperfil__der-contenido
+                    h5.c-tuperfil__der-contenido-h5 Información básica: 
+                    p.c-tuperfil__der-contenido-p Nombre 
+                    p.c-tuperfil__der-contenido-p Apellidos 
+                    p.c-tuperfil__der-contenido-p Nivel de estudios 
+                    h5.c-tuperfil__der-contenido-h5 Enlaces: 
+                    p.c-tuperfil__der-contenido-p Página personal 
+                    p.c-tuperfil__der-contenido-p Perfil de Twitter 
+                    p.c-tuperfil__der-contenido-p Perfil de Facebook 
+                    p.c-tuperfil__der-contenido-p Perfil de LinkenIn 
+                    p.c-tuperfil__der-contenido-p Perfil de Youtube 
+                    div.c-tuperfil__der-contenido-div
+                        input.c-button.c-button--amarillo.c-tuperfil__der-contenido-boton(type="submit", value="Guardar")

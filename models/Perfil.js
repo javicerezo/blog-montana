@@ -19,7 +19,7 @@ export const Perfil = db.define ('perfiles', {
     },
     rolId: {
         type: Sequelize.INTEGER
-        // numero 0 --> administrador
+        // numero 1 --> administrador
         // numero 2 --> general
     }
 })

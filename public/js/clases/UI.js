@@ -7,7 +7,6 @@ class UI {
     }
     imprimirAlerta (contenedorMensaje, tipo, mensaje) {
         if(contenedorMensaje.childElementCount === 0) {
-            console.log('entra en el if')
             const p = document.createElement('p');
             p.classList.add('u-mensaje');
             p.textContent = mensaje;
@@ -23,7 +22,7 @@ class UI {
             contenedorMensaje.appendChild(p);
             setTimeout((e) => {
                 this.limpiarHTML(contenedorMensaje);
-            }, 30000);
+            }, 3000);
         }
     }
 }
