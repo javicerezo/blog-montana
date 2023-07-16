@@ -1,0 +1,119 @@
+.c-login {
+    margin: 4rem 0;
+    &__contenedor {
+        position: relative;
+        margin: 1rem;
+        @include tablet {
+            margin: 3rem auto;
+            width: 70%;
+        }
+    }
+    &__h1 {
+        font-size: 1.5em;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid map-get($colores, color-primario);
+        @include tablet {
+            font-size: 2em;
+        }
+    }
+    &__contenedor2 {
+        margin: 3rem 0;
+        @include flex(column, nowrap, flex-start, center);
+        @include tablet {
+            @include flex(row, nowrap, center, flex-start);
+        }
+    }
+    &__form {
+        margin: 2rem auto;
+        width: 90%;
+        @include tablet {
+            width: 50%;
+        }
+    }
+    &__input {
+        &-email, &-password {
+            width: 100%;
+            border: 1px solid map-get($colores, color-gris);
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        &-olvido {
+            margin: 2rem 0;
+            font-size: 1.2em;
+            color: map-get($colores, color-azul);
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        &-boton {
+            width: 100%;
+            @include tablet {
+                width: auto;
+                margin: 0 auto;
+            }
+        }
+    }
+    &__cliente {
+        margin: 3rem auto;
+        width: 90%;
+        @include tablet {
+            width: 40%;
+            margin: 2rem;
+        }
+        &-p {
+            margin-bottom: 1.5rem;
+        }
+        &-p:first-child {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        &-p:nth-child(2) {
+            font-size: 1.2rem;
+        }
+        &-boton {
+            width: 100%;
+            @include tablet {
+                width: auto;
+                margin: 0 auto;
+            }
+        }
+    }
+    &__contenedorOlvidado {
+        display: none;
+        pointer-events: none;
+        @include position(absolute, 0, 0, null, null);
+        @include neomorfismo (map-get($colores, color-secundario), map-get($colores, color-secundario), 0.5rem, null, 0.5rem, map-get($colores, color-primario-3), map-get($colores, color-primario-3));
+        background-color: map-get($colores, color-secundario);
+        @include tablet {
+            @include position(absolute, 0, 15%, null, null);
+            width: 70%;
+        }
+        &--mod {
+            display: block;
+            pointer-events: unset;
+        }
+    }
+    &__olvidado {
+        position: relative;
+        z-index: 201;
+        margin: 1rem;
+        @include tablet {
+            margin: 3rem;
+        }
+        &-close {
+            @include position(absolute, -2rem, -2rem, null, null);
+            font-size: 1.5em;
+        }
+        &-h2 {
+            font-size: 1.7em;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+        &-email {
+            width: 100%;
+            margin: 2rem 0;
+            padding: 1rem;
+            border: 1px solid map-get($colores, color-gris);
+        }
+    }
+}

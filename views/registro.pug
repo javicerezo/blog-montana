@@ -1,0 +1,15 @@
+extends ./layout/index
+
+block contenido
+    div.c-registro
+        div.c-registro__contenedor
+            h1.c-registro__h1 Crear una nueva cuenta
+            form.c-registro__form
+                input.c-registro__input-email(type="email", name="" placeholder="e-mail")
+                input.c-registro__input-password(type="password", name="" placeholder="Contraseña")
+                input.c-button.c-button--amarillo.c-registro__input-boton(type="button", value="Registrarme")
+        p.c-registro__p Al registrarte aceptas la Política de privacidad y de Cookies de este blog
+        div.c-registro__abajo
+            p.c-registro__abajo-p ¿Ya tienes una cuenta?
+            a.c-registro__abajo-sesion(href="/login") Iniciar sesión
+        div.c-login__mensaje

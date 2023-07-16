@@ -24,14 +24,9 @@ block contenido
                         li.c-blog__buscador-cuadro-li
                             i.fa-solid.fa-magnifying-glass
             div.c-blog__contenedor2
-                ul.c-blog__ul 
-                    li.c-blog__li Salidas
-                    li.c-blog__li Noticias
-                    li.c-blog__li Consejos
-                    li.c-blog__li Test
-                    li.c-blog__li Reportajes
-                    li.c-blog__li P.Física
-                    li.c-blog__li Videos
+                ul.c-blog__ul
+                    each categoria in categorias
+                        li.c-blog__li= categoria.categoria
             div.c-blog__contenedor2--mod
                 div.c-blog__categoria
                     h5 Salidas
@@ -174,4 +169,6 @@ block contenido
                                     span.c-blog__noticia-categoria Categoría
                                     span.c-blog__noticia-fecha - 21/12/2021
                                 p.c-blog__noticia-texto Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit....
-                            
+
+    p= JSON.stringify(roles)
+    p= JSON.stringify(perfiles)

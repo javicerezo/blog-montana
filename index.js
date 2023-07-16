@@ -1,7 +1,13 @@
 import express from 'express';
 import router from './routes/index.js';
+import db from './config/db.js';
 
 const app = express(); //NOTA IMPORT...SOLO SE PERMITE UNA INSTANCIA DE EXPRESS (QUE ES APP)
+
+// CONECTAR LA BASE DE DATOS
+db.authenticate()
+    .then(() => console.log('base de datos conectada'))
+    .catch(error => console.log(error));
 
 //DEFINIR PUERTO
 const port = process.env.PORT || 4000;

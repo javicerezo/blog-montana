@@ -1,0 +1,29 @@
+extends ./layout/index
+
+block contenido
+    div.c-login
+        div.c-login__contenedor
+            h1.c-login__h1 Iniciar sesión
+            div.c-login__contenedor2
+                form.c-login__form
+                    input.c-login__input-email.js-login__input-email(type="email", name="" placeholder="e-mail")
+                    input.c-login__input-password.js-login__input-password(type="password", name="" placeholder="Contraseña")
+                    a.c-login__input-olvido ¿Has olvidado tu contraseña?
+                    input.c-button.c-button--amarillo.c-login__input-boton(type="button", value="Identificarme")
+                div.c-login__cliente
+                    p.c-login__cliente-p ¿Eres nuevo cliente?
+                    p.c-login__cliente-p No te preocupes, crea rápidamente tu nueva cuenta
+                    button.c-button.c-button--amarillo.c-login__cliente-boton
+                        a(href="/registro") Crear mi cuenta
+            div.c-login__contenedorOlvidado
+                div.c-login__olvidado
+                    div.c-login__olvidado-close
+                        i.fa-solid.fa-xmark
+                    h2.c-login__olvidado-h2 ¿Has olvidado la contraseña?
+                    p.c-login__olvidado-p Si has olvidado tu contraseña introduce la dirección de e-mail con la que te registraste y recibirás un correo con los pasos para recuperarla
+                    input.c-login__olvidado-email(type="email", name="" placeholder="Tu e-mail")
+                    input.c-button.c-button--amarillo.c-login__olvidado-boton(type="button", value="Recuperar mi contraseña")
+            div.c-login__mensaje.js-login__mensaje
+                
+
+    script(src='js/login.js' type='module') 

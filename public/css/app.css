@@ -569,6 +569,7 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 20px;
   background-color: #f1f1f1;
+  text-transform: capitalize;
   cursor: pointer;
 }
 @media (min-width: 1024px) {
@@ -682,6 +683,242 @@ body {
   color: #999;
 }
 
+.c-registro {
+  margin: 3rem 0;
+}
+.c-registro__contenedor {
+  margin: 1rem;
+}
+@media (min-width: 768px) {
+  .c-registro__contenedor {
+    margin: 3rem auto;
+    width: 70%;
+  }
+}
+.c-registro__h1 {
+  font-size: 1.5em;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #181818;
+}
+@media (min-width: 768px) {
+  .c-registro__h1 {
+    font-size: 2em;
+  }
+}
+.c-registro__form {
+  margin: 2rem auto;
+  width: 90%;
+}
+@media (min-width: 768px) {
+  .c-registro__form {
+    width: 70%;
+  }
+}
+.c-registro__input-email, .c-registro__input-password {
+  width: 100%;
+  border: 1px solid #999;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+.c-registro__input-boton {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .c-registro__input-boton {
+    width: auto;
+    margin: 0 auto;
+  }
+}
+.c-registro__p {
+  margin: 0 auto;
+  width: 90%;
+  border-bottom: 1px solid #181818;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .c-registro__p {
+    width: 70%;
+  }
+}
+.c-registro__abajo {
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 90%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .c-registro__abajo {
+    width: 70%;
+  }
+}
+.c-registro__abajo-p {
+  font-size: 1.3em;
+}
+.c-registro__abajo-sesion {
+  font-size: 1.1em;
+  margin-left: 1rem;
+  color: blue;
+  cursor: pointer;
+}
+.c-registro__abajo-sesion:hover {
+  text-decoration: underline;
+}
+
+.c-login {
+  margin: 4rem 0;
+}
+.c-login__contenedor {
+  position: relative;
+  margin: 1rem;
+}
+@media (min-width: 768px) {
+  .c-login__contenedor {
+    margin: 3rem auto;
+    width: 70%;
+  }
+}
+.c-login__h1 {
+  font-size: 1.5em;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #181818;
+}
+@media (min-width: 768px) {
+  .c-login__h1 {
+    font-size: 2em;
+  }
+}
+.c-login__contenedor2 {
+  margin: 3rem 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .c-login__contenedor2 {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+.c-login__form {
+  margin: 2rem auto;
+  width: 90%;
+}
+@media (min-width: 768px) {
+  .c-login__form {
+    width: 50%;
+  }
+}
+.c-login__input-email, .c-login__input-password {
+  width: 100%;
+  border: 1px solid #999;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+.c-login__input-olvido {
+  margin: 2rem 0;
+  font-size: 1.2em;
+  color: blue;
+}
+.c-login__input-olvido:hover {
+  text-decoration: underline;
+}
+.c-login__input-boton {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .c-login__input-boton {
+    width: auto;
+    margin: 0 auto;
+  }
+}
+.c-login__cliente {
+  margin: 3rem auto;
+  width: 90%;
+}
+@media (min-width: 768px) {
+  .c-login__cliente {
+    width: 40%;
+    margin: 2rem;
+  }
+}
+.c-login__cliente-p {
+  margin-bottom: 1.5rem;
+}
+.c-login__cliente-p:first-child {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.c-login__cliente-p:nth-child(2) {
+  font-size: 1.2rem;
+}
+.c-login__cliente-boton {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .c-login__cliente-boton {
+    width: auto;
+    margin: 0 auto;
+  }
+}
+.c-login__contenedorOlvidado {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem, -0.5rem -0.5rem 1rem;
+  transition: all 1s ease;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .c-login__contenedorOlvidado {
+    position: absolute;
+    top: 0;
+    right: 15%;
+    width: 70%;
+  }
+}
+.c-login__contenedorOlvidado--mod {
+  display: block;
+  pointer-events: unset;
+}
+.c-login__olvidado {
+  position: relative;
+  z-index: 201;
+  margin: 1rem;
+}
+@media (min-width: 768px) {
+  .c-login__olvidado {
+    margin: 3rem;
+  }
+}
+.c-login__olvidado-close {
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
+  font-size: 1.5em;
+}
+.c-login__olvidado-h2 {
+  font-size: 1.7em;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.c-login__olvidado-email {
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1rem;
+  border: 1px solid #999;
+}
+
 .c-footer {
   background-color: #181818;
   padding: 2rem 0;
@@ -742,6 +979,23 @@ body {
 
 .u-active {
   background-color: #ffcc00;
+}
+
+.u-mensaje {
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+.u-mensaje--error {
+  color: red;
+}
+.u-mensaje--exito {
+  color: green;
+}
+.u-mensaje--alerta {
+  color: #ffc400;
 }
 
 /*# sourceMappingURL=app.css.map */

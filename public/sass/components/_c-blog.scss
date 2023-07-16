@@ -131,6 +131,7 @@
         padding: 0.5rem 1rem;
         border-radius: 20px;
         background-color: map-get($colores, color-secundario-2);
+        text-transform: capitalize;
         cursor: pointer;
         @include desktop {
             background-color: map-get($colores, color-secundario);
