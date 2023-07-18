@@ -25,6 +25,17 @@ class UI {
             }, 3000);
         }
     }
+    habilitar (contenedor) {
+        // Habilitamos el uso de un botón
+        contenedor.classList.remove('u-cursor--not-allowed','u-opacity--50');
+        contenedor.disabled = false;
+    };
+    
+    deshabilitar (contenedor) {
+        // Deshabilitamos el uso de un botón
+        contenedor.classList.add('u-cursor--not-allowed','u-opacity--50');
+        contenedor.disabled = true;
+    };
 }
 
 export default UI;

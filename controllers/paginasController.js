@@ -1,17 +1,11 @@
 import { Categoria } from '../models/Categoria.js';
-import { Rol } from '../models/Rol.js';
-import { Perfil} from '../models/Perfil.js';
  
 const paginaInicio = async (req, res) => { 
     const categorias = await Categoria.findAll();
-    const roles = await Rol.findAll();
-    const perfiles = await Perfil.findAll();
 
     res.render('inicio', {
         pagina: 'Inicio',
-        categorias,
-        roles,
-        perfiles
+        categorias
     });
 }
 

@@ -7,7 +7,8 @@ import {
     paginaTuPerfil 
 } from "../controllers/paginasController.js";
 import {
-    nuevoPerfil
+    nuevoPerfil,
+    nuevoLogin
 } from '../controllers/perfilesController.js'
 
 const router = express.Router();
@@ -15,7 +16,7 @@ const router = express.Router();
 router.get('/', paginaInicio);
 router.get('/favoritos', paginaFavoritos);
 router.get('/login', paginaLogin);
-// router.get('/login', paginaLogin);
+router.post('/login', nuevoLogin);
 router.get('/registro', paginaRegistro);
 router.post('/registro', nuevoPerfil);
 router.get('/tuperfil', paginaTuPerfil);

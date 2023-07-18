@@ -9,30 +9,34 @@ header.c-header
             input.c-header__centro-input(type="text" placeholder="Buscar...")
             i.fa-solid.fa-magnifying-glass
         div.c-header__der
-            div.c-header__iniciar
-                button.c-button.c-button--amarillo.c-header__iniciar-boton.js-header__iniciar 
-                    a(href="/login") Login
-            div.c-header__registrate 
-                button.c-button.c-button--amarillo.c-header__registrate-boton.js-header__registrate
-                a(href="/registro") Regístrate
-            div.c-header__cuenta
+            if(user)
+                div.c-header__cuenta
                 div.c-header__cuenta-div
-                    p.js-header__p JC
+                    a(href="/tuperfil").js-header__p JC
                 div.c-header__cuenta-submenus.c-submenus
                     div.c-submenus__contenedor
                         div.c-submenus__secciones.c-submenus__secciones--mod
                             div.c-header__cuenta-div.c-header__cuenta-div--mod
-                                p.js-header__p JC  
+                                a(href="/tuperfil").js-header__p JC  
                             div.c-submenus__datos
-                                p.c-submenus__datos-nombre Javier Cerezo Orellana
-                                p.c-submenus__datos-email jc.webmob@gmail.com
+                                a(href="/tuperfil").c-submenus__datos-nombre Javier Cerezo Orellana
+                                a(href="/tuperfil").c-submenus__datos-email jc.webmob@gmail.com
                         div.c-submenus__secciones
-                            p.c-submenus__p favoritos
-                            p.c-submenus__p palabra
-                            p.c-submenus__p palabra
+                            a(href="/favoritos").c-submenus__p favoritos
+                            a(href="#").c-submenus__p palabra
+                            a(href="#").c-submenus__p palabra
                         div.c-submenus__secciones
-                            p.c-submenus__p Club de montaña
-                            p.c-submenus__p palabra
+                            a(href="#").c-submenus__p Club de montaña
+                            a(href="#").c-submenus__p palabra
                         div.c-submenus__secciones
-                            p.c-submenus__p editar perfil
+                            a(href="/tuperfil").c-submenus__p editar perfil
                             p.c-submenus__p cerrar sesión
+            else
+                div.c-header__iniciar
+                    button.c-button.c-button--amarillo.c-header__iniciar-boton.js-header__iniciar 
+                        a(href="/login") Login
+                div.c-header__registrate 
+                    button.c-button.c-button--amarillo.c-header__registrate-boton.js-header__registrate
+                        a(href="/registro") Regístrate
+
+    script(src='js/header.js' type='module')

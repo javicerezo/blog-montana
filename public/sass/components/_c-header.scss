@@ -64,7 +64,7 @@
     &__cuenta {
         @include flex (column, nowrap, center, flex-end);
         cursor: pointer;
-        display: none;
+        // display: none;
         &:hover {
             .c-header__cuenta-submenus {
                 visibility: visible;

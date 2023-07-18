@@ -5,8 +5,8 @@ block contenido
         div.c-login__contenedor
             h1.c-login__h1 Iniciar sesión
             div.c-login__contenedor2
-                form.c-login__form.js-login__form(action="", method="POST")
-                    input.c-login__input-email.js-login__input-email(type="email", name="emailLogin" placeholder="e-mail")
+                form.c-login__form.js-login__form(action="/login", method="POST")
+                    input.c-login__input-email.js-login__input-email(type="email", name="emailLogin" placeholder="Tu e-mail")
                     input.c-login__input-password.js-login__input-password(type="password", name="passwordLogin" placeholder="Contraseña")
                     a.c-login__input-olvido.js-login__input-olvido ¿Has olvidado tu contraseña?
                     input.c-button.c-button--amarillo.c-login__input-boton.js-login__input-boton(type="submit", value="Identificarme")
@@ -21,9 +21,13 @@ block contenido
                         i.fa-solid.fa-xmark
                     h2.c-login__olvidado-h2 ¿Has olvidado la contraseña?
                     p.c-login__olvidado-p Si has olvidado tu contraseña introduce la dirección de e-mail con la que te registraste y recibirás un correo con los pasos para recuperarla
-                    input.c-login__olvidado-email(type="email", name="emailOlvido" placeholder="Tu e-mail")
-                    input.c-button.c-button--amarillo.c-login__olvidado-boton(type="submit", value="Recuperar mi contraseña")
+                    form(action="/login", method="POST")
+                        input.c-login__olvidado-email.js-login__olvidado-email(type="email", name="emailOlvido" placeholder="Tu e-mail")
+                        input.c-button.c-button--amarillo.c-login__olvidado-boton.js-login__olvidado-boton(type="submit", value="Recuperar mi contraseña")
+                div.c-login__mensaje-olvidado.js-login__mensaje-olvidado
             div.c-login__mensaje.js-login__mensaje
-                
+                if(errores)
+                    each error in errores 
+                        p.u-mensaje.u-mensaje--error= error.mensaje
 
     script(src='js/login.js' type='module') 

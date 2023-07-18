@@ -1,9 +1,13 @@
 
-.u-flex {
-    display: flex;
+.u-opacity {
+    &--50 {
+        opacity: 0.5;
+    }
 }
-.u-rotation {
-    transform: rotate(180deg);
+.u-cursor{
+    &--not-allowed {
+        cursor: not-allowed;
+    }
 }
 .u-active {
     background-color: map-get($colores, color-fondo);
