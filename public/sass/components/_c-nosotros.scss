@@ -1,0 +1,78 @@
+.c-nosotros {
+    @include flex (column, nowrap, center, center);
+    margin: 1rem;
+    &__contenedor {
+        margin: 1rem 0;
+        @include flex (column, nowrap, center, center);
+        width: 100%;
+        @include telefonoXL {
+            width: 95%;
+        }
+        @include tablet{
+            width: 90%;
+        }
+        @include desktop{
+            margin: 3rem 0;
+            width: 80%;
+        }
+    }
+    &__h1 {
+        font-size: 2em;
+        margin-bottom: 2rem;
+    }
+    &__p {
+        margin: 1rem;
+        @include tablet {
+            font-size: 1.2em;
+        }
+    }
+    &__p::first-line {
+        margin-left: 2rem;
+    }
+    &__img {
+        margin: 2rem;
+    }
+    &__form {
+        width: 100%;
+        margin: 2rem;
+        padding: 2rem;
+        @include flex(column, nowrap, center, center);
+        @include neomorfismo (map-get($colores, color-secundario), map-get($colores, color-secundario), 0.5rem, null, 0.5rem, map-get($colores, color-primario-3), map-get($colores, color-primario-3));
+        @include tablet {
+            padding: 2rem;
+            margin: 3rem;
+        }
+        &-h2 {
+            font-size: 1.5em;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            @include tablet {
+                font-size: 2em;
+                margin-bottom: 3rem;
+            }
+        }
+        &-fieldset {
+            padding: 1rem;
+            @include flex(column, nowrap, center, center);
+            @include tablet {
+                @include flex(row, nowrap, center, center);
+            }
+        }
+        &-input:first-child {
+            border: 1px solid map-get($colores, color-gris);
+            padding: 1rem;
+            @include tablet {
+                margin-right: 2rem;
+            }
+        }
+        &-input:nth-child(2) {
+            @include tablet {
+                margin-left: 2rem;
+            }
+        }
+        &-input {
+            margin: 1rem;
+            font-size: 1.3em;
+        }
+    }
+}

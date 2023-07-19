@@ -1,4 +1,4 @@
-.c-inicio {
+.c-entrada {
     @include flex (column, nowrap, center, center);
     &__contenedor {
         width: 95%;
@@ -41,52 +41,6 @@
             }
             @include desktop {
                 display: none;
-            }
-        }
-    }
-    &__buscador {
-        @include flex(row, nowrap, center, center);
-        position: relative;
-        color: map-get($colores, color-gris);
-        &-li {
-            display: none;
-            margin-right: 1rem;
-            font-size: 1.5em;
-            cursor: pointer;
-            &:hover {
-                color: map-get($colores, color-primario);
-            }
-            @include desktop {
-                display: block;
-            }
-        }
-        &-li:last-child {
-            display: block;
-            margin-right: 0;
-            color: map-get($colores, color-primario);
-            &:hover {
-                color: map-get($colores, color-fondo-hover);
-            }
-        }
-        &-cuadro {
-            @include flex(row, nowrap, center, center);
-            width: 100%;
-            margin: 1.5rem;
-            @include desktop {
-                margin: 0;
-            }
-            &-li {
-                font-size: 1em;
-                padding: 0.5rem;
-                margin-right: 0.5rem;
-                border-radius: 5px;
-                color: map-get($colores, color-primario);
-                @include tablet {
-                    font-size: 1.5em;
-                }
-            }
-            &-li:first-child {
-                border: 1px solid map-get($colores, color-gris);
             }
         }
     }

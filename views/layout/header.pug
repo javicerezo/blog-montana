@@ -1,42 +1,19 @@
-header.c-header
-    div.c-header__cabecera
+header.c-header.js-header
+    div.c-header__contenedor
         div.c-header__izq
             a(href="https://javicerezo.github.io/tienda-online/" target="_blank")
                 img(src="assets/img/logo.svg" loading="lazy" alt="logo tienda deportes montaña")
         h2
             a.c-header__titulo(href="/") Esquí y montaña
-        div.c-header__centro.js-header__centro
-            input.c-header__centro-input(type="text" placeholder="Buscar...")
-            i.fa-solid.fa-magnifying-glass
-        div.c-header__der
-            if(user)
-                div.c-header__cuenta
-                div.c-header__cuenta-div
-                    a(href="/tuperfil").js-header__p JC
-                div.c-header__cuenta-submenus.c-submenus
-                    div.c-submenus__contenedor
-                        div.c-submenus__secciones.c-submenus__secciones--mod
-                            div.c-header__cuenta-div.c-header__cuenta-div--mod
-                                a(href="/tuperfil").js-header__p JC  
-                            div.c-submenus__datos
-                                a(href="/tuperfil").c-submenus__datos-nombre Javier Cerezo Orellana
-                                a(href="/tuperfil").c-submenus__datos-email jc.webmob@gmail.com
-                        div.c-submenus__secciones
-                            a(href="/favoritos").c-submenus__p favoritos
-                            a(href="#").c-submenus__p palabra
-                            a(href="#").c-submenus__p palabra
-                        div.c-submenus__secciones
-                            a(href="#").c-submenus__p Club de montaña
-                            a(href="#").c-submenus__p palabra
-                        div.c-submenus__secciones
-                            a(href="/tuperfil").c-submenus__p editar perfil
-                            p.c-submenus__p cerrar sesión
-            else
-                div.c-header__iniciar
-                    button.c-button.c-button--amarillo.c-header__iniciar-boton.js-header__iniciar 
-                        a(href="/login") Login
-                div.c-header__registrate 
-                    button.c-button.c-button--amarillo.c-header__registrate-boton.js-header__registrate
-                        a(href="/registro") Regístrate
-
-    script(src='js/header.js' type='module')
+        nav.c-header__nav.js-header__nav.c-header__nav-activo
+            li.c-header__nav-li 
+                a(href="/nosotros") Nosotros
+            li.c-header__nav-li 
+                a(href="/entradas") Entradas
+            li.c-header__nav-li 
+                a(href="/mas") Mas 
+        div.c-header__burger.js-header__burger
+            label.c-header__burger-icono
+                i.fa-solid.fa-bars
+    
+script(type="module", src="js/header.js") 
