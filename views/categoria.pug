@@ -1,0 +1,18 @@
+extends ./layout/index
+
+block contenido
+    main.c-categoria     
+        .c-categoria__contenedor
+            each r in resultado
+                .c-categoria__cabecera
+                    h1.c-categoria__cabecera-h1 #{r.categoria}
+                    //- h1.c-categoria__cabecera-h1 #{r.id}
+                .c-categoria__grid
+                    each r2 in resultado2 
+                        if(r.id == r2.tipoId)
+                            .c-categoria__noticia
+                                .c-categoria__img 
+                                    img(src=`/assets/img/${r2.imagen}`)
+                                .c-categoria__contenido 
+                                    h3.c-categoria__contenido-titulo #{r2.titulo}
+                                    p.c-categoria__contenido-desarrollo #{r2.desarrollo}

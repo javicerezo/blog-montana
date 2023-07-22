@@ -32,17 +32,6 @@
                 font-size: 2.5em;
             }
         }
-        &-li {
-            font-size: 1.5em;
-            cursor: pointer;
-            color: map-get($colores, color-gris);
-            &--mod {
-                color: map-get($colores, color-primario);
-            }
-            @include desktop {
-                display: none;
-            }
-        }
     }
     &__contenedor2 {
         margin: 1rem 0;
@@ -62,6 +51,7 @@
         margin: 1rem 0;
         @include flex(row, nowrap, flex-start, center);
         h5 {
+            text-transform: capitalize;
             cursor: pointer;
             font-weight: bold;
             margin-right: 1rem;

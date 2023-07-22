@@ -6,13 +6,10 @@ block contenido
             div.c-entrada__cabecera
                 div.c-entrada__titular
                     h1.c-entrada__titular-h1 #{nombreSitio}
-                    li.c-entrada__titular-li 
-                        i.fa-solid.fa-magnifying-glass
             div.c-entrada__contenedor2
                 ul.c-entrada__ul
                     each categoria in categorias
-                        li.c-entrada__li 
-                            a(href=`/entrada/:${categoria.categoria}`) #{categoria.categoria}
+                        a.c-entrada__li(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
             div.c-entrada__contenedor2--mod
                 div.c-entrada__categoria
                     h5 Rutas

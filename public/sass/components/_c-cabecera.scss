@@ -1,0 +1,47 @@
+.c-cabecera {
+    @include flex (column, nowrap, center, center);
+    &__contenedor {
+        width: 95%;
+        @include tablet {
+            width: 100%;
+            margin: 1rem 0;
+        }
+        @include desktop {
+            margin: 2rem 0;
+            width: 80%;
+        }
+    }
+    &__h1 {
+        font-size: 1.7em;
+        font-weight: bold;
+        @include tablet {
+            font-size: 2.1em;
+        }
+        @include desktop {
+            font-size: 2.5em;
+        }
+    }
+    &__ul {
+        @include flex(row, nowrap, flex-start, center);
+        border-bottom: 1px solid map-get($colores, color-gris);
+    }
+    &__li {
+        margin: 1rem 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        background-color: map-get($colores, color-secundario-2);
+        text-transform: capitalize;
+        cursor: pointer;
+        @include desktop {
+            background-color: map-get($colores, color-secundario);
+            border-radius: 0;
+            margin: 0;
+            padding: 1rem;
+            font-size: 1.2em;
+            font-weight: bold;
+            &:hover {
+                border-bottom: 2px solid map-get($colores, color-gris);
+            }
+        }
+    }
+}

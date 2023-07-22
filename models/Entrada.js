@@ -2,7 +2,6 @@ import Sequelize from "sequelize";
 import db from "../config/db.js";
 
 export const Entrada = db.define('entradas', {
-    // AQUI CONFIGURAMOS LO QUE ES CADA COLUMNA DE LA TABLA 'ENTRADAS', QUE ES LA QUE ESTAMOS CONSULTANDO...no hace falta poner el id
     titulo: {
         type: Sequelize.STRING
     },
@@ -12,8 +11,8 @@ export const Entrada = db.define('entradas', {
     imagen: {
         type: Sequelize.STRING
     },
-    tipo: {
+    tipoId: {
         type: Sequelize.NUMBER
-        // 0-rutas, 1-noticias, 2-consejos, 3-test, 4-reportajes, 5-preparacion fisica, 
+        // 1-rutas, 2-noticias, 3-consejos, 4-test, 5-reportajes, 6-preparacion fisica, 
     }
 })

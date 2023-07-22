@@ -1,0 +1,6 @@
+.c-cabecera
+    .c-cabecera__contenedor 
+        h1.c-cabecera__h1 #{nombreSitio}
+        ul.c-cabecera__ul
+            each categoria in categorias
+                a.c-entrada__li(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
