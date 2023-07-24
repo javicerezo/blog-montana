@@ -4,6 +4,7 @@ import {
     paginaNosotros,
     paginaEntradas,
     paginaEntradasCategoria,
+    paginaEntradasDetalle,
     paginaMas
 } from "../controllers/paginasController.js";
 import {
@@ -19,7 +20,7 @@ router.post('/nosotros', agregarNewsletter);
 
 router.get('/entradas', paginaEntradas);
 router.get('/entradas/:categoria', paginaEntradasCategoria);
-// router.get('/entradas/:nombre', paginaEntradas);
+router.get('/entradas/:categoria/:titulo', paginaEntradasDetalle);
 
 router.get('/mas', paginaMas);
 

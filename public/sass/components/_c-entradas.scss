@@ -1,7 +1,6 @@
-.c-categoria {
+.c-entradas {
     @include flex (column, nowrap, center, center);
     &__contenedor {
-        @include flex (column, nowrap, center, center);
         width: 95%;
         @include tablet {
             width: 90%;
@@ -44,50 +43,47 @@
             }
         }
     }
-    &__cabecera {
-        width: 100%;
+    &__listado {
         margin: 1rem 0;
-        @include tablet {
+        &-titulo {
+            font-size: 1.5rem;
+            padding: 1rem;
+            border-bottom: 2px solid map-get($colores, color-gris); 
+            color: map-get($colores, color-primario-2); 
             margin-bottom: 2rem;
-            margin-top: 4rem;
-        }
-        &-h1 {
-            font-size: 1.5em;
-            text-transform: uppercase;
-            @include tablet {
-                font-size: 2.5em;
+            @include flex(row, nowrap, flex-start, center);
+            a {
+                text-transform: capitalize;
+                cursor: pointer;
+                font-weight: bold;
+                margin-right: 1rem;
+                &:hover {
+                    color: map-get($colores, color-gris); 
+                }
+            }
+            i {
+                font-size: 0.6em;
+            }
+            @include desktop {
+                font-size: 2rem;
             }
         }
-    }
-    &__paginacion {
-        width: 100%;
-        margin-bottom: 1rem;
-        @include flex(row, nowrap, flex-end, center);
-        @include tablet {
-            width: 90%;
-            margin-bottom: 2rem;
-        }
-        i {
-            cursor: pointer;
-            margin-right: 0.3rem;
-        }
-        &-p {
-            margin-right: 0.3rem;
-        }
-    }
-    &__grid {
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid map-get($colores, color-gris);
-        @include grid(1, 0.5rem);
-        @include tablet {
-            @include grid(3, 0.5rem);
-            // margin: 2rem 0;
-            padding-bottom: 2rem;
-            width: 90%;
-        }
-        @include desktop {
-            @include grid(4, 1rem);
+        &-grid {
+            @include grid(1, 1rem);
+            @include tablet {
+                @include grid(2, 1rem);
+            }
+            &--mod {
+                @include grid(1, 1rem);
+                @include tablet {
+                    @include grid(4, 1rem);
+                }
+            }
+            &--mod2 {
+                @include grid(1, 0.5rem);
+                @include tablet {
+                }
+            }
         }
     }
     &__noticia {

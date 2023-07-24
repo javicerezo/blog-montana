@@ -3,16 +3,39 @@ extends ./layout/index
 block contenido
     main.c-categoria     
         .c-categoria__contenedor
-            each r in resultado
+            .c-categoria__categorias
+                ul.c-categoria__categorias-ul
+                    each cat in todasCategorias
+                        a.c-categoria__categorias-li(href=`/entradas/${cat.categoria}`) #{cat.categoria}
+            each cat in resultadoCategoria
                 .c-categoria__cabecera
-                    h1.c-categoria__cabecera-h1 #{r.categoria}
-                    //- h1.c-categoria__cabecera-h1 #{r.id}
+                    h2.c-categoria__cabecera-h1 #{cat.categoria}
+                .c-categoria__paginacion
+                    i.fa-solid.fa-chevron-left
+                    p.c-categoria__paginacion-p 1
+                    p.c-categoria__paginacion-p de
+                    p.c-categoria__paginacion-p 123
+                    i.fa-solid.fa-chevron-right
                 .c-categoria__grid
-                    each r2 in resultado2 
-                        if(r.id == r2.tipoId)
-                            .c-categoria__noticia
-                                .c-categoria__img 
-                                    img(src=`/assets/img/${r2.imagen}`)
-                                .c-categoria__contenido 
-                                    h3.c-categoria__contenido-titulo #{r2.titulo}
-                                    p.c-categoria__contenido-desarrollo #{r2.desarrollo}
+                    each entr in todasEntradas 
+                        if(cat.id == entr.tipoId)
+                            li.c-categoria__noticia
+                                .c-categoria__noticia-img--mod
+                                    a(href=`/entradas/${cat.categoria}/${entr.titulo}`)
+                                        img(src=`/assets/img/${entr.imagen}` alt=`imagen noticia`)
+                                .c-categoria__noticia-contenido
+                                    .c-categoria__noticia-titulo
+                                        a(href=`/entradas/${cat.categoria}/${entr.titulo}`)
+                                            h5 #{entr.titulo}
+                                    .c-categoria__noticia-cuadro
+                                        a.c-categoria__noticia-categoria(href=`/entradas/${cat.categoria}`) #{cat.categoria}
+                                        span.c-categoria__noticia-fecha #{entr.updatedAt}
+                                    p.c-categoria__noticia-texto--mod #{entr.desarrollo}
+                .c-categoria__paginacion
+                    i.fa-solid.fa-chevron-left
+                    p.c-categoria__paginacion-p 1
+                    p.c-categoria__paginacion-p de
+                    p.c-categoria__paginacion-p 123
+                    i.fa-solid.fa-chevron-right
+                                    
+    script(type="module", src="/js/categoria.js")           

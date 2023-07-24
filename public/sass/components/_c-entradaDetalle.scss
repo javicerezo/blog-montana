@@ -1,0 +1,301 @@
+.c-entradaDetalle {
+    @include flex (column, nowrap, center, center);
+    &__contenedor {
+        @include flex (column, nowrap, center, center);
+        width: 95%;
+        @include tablet {
+            width: 90%;
+        }
+        @include desktop {
+            width: 80%;
+        }
+    }
+    &__categorias {
+        margin-bottom: 0.5rem 0;
+        overflow-x: hidden;
+        width: 100%;
+        @include desktop {
+            margin-bottom: 1rem 0;
+        }
+        &-ul {
+            @include flex(row, nowrap, center, center);
+            @include desktop{
+                @include flex(row, nowrap, flex-start, center);
+                border-bottom: 1px solid map-get($colores, color-gris);
+            }
+        }
+        &-li {
+            margin: 1rem 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background-color: map-get($colores, color-secundario-2);
+            text-transform: capitalize;
+            cursor: pointer;
+            @include desktop {
+                background-color: map-get($colores, color-secundario);
+                border-radius: 0;
+                margin: 0;
+                padding: 1rem;
+                font-size: 1.2em;
+                font-weight: bold;
+                &:hover {
+                    border-bottom: 2px solid map-get($colores, color-gris);
+                }
+            }
+        }
+    }
+    &__noticia {
+        margin: 1rem 0;
+        width: 90%;
+        @include flex(column, nowrap, flex-start, center);
+        @include tablet {
+            width: 80%;
+            margin: 2rem 0;
+        }   
+        @include desktop {
+            margin: 4rem 0;
+        }   
+    }
+    &__titulo {
+        font-size: 1.6em;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        @include tablet {
+            font-size: 2.5em;
+            line-height: 1em;
+            margin-bottom: 2rem;
+        }
+        @include desktop {
+            font-size: 3em;
+        }
+    }
+    &__comentario {
+        width: 100%;
+        margin-bottom: 1rem;
+        @include flex(row, nowrap, flex-start, center);
+        @include tablet {
+            margin-bottom: 2rem;
+        }   
+        @include desktop {
+            margin-bottom: 4rem;
+        }
+        &-fecha, &-p {
+            font-size: 0.8em;
+            cursor: pointer;
+            @include tablet {
+                font-size: 1em;
+            }
+        }
+        &-i, &-p {
+            color: map-get($colores, color-azul);
+        }
+        &-i {
+            margin: 0 1rem;
+            cursor: pointer;
+        }
+    }
+    &__img {
+        @include flex(row, nowrap, center, center);
+        margin-bottom: 2rem;
+    }
+    &__texto {
+        @include tablet {
+            font-size: 1.3em;
+        }
+    }
+    &__boxRecientes {
+        padding: 1rem 0;
+        border-top: 1px dotted map-get($colores, color-azul); 
+        border-bottom: 1px dotted map-get($colores, color-azul); 
+        @include flex(column, nowrap, center, flex-start);
+        @include tablet {
+            padding: 2rem 0;
+        }
+    }
+    &__recientes {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        @include tablet {
+            font-size: 1.8em;
+            margin-bottom: 1.5rem;
+        }
+    }
+    &__grid {
+        @include grid(4, 0.5rem);
+    }
+    &__noticiasRecientes {
+        margin-bottom: 1.5rem;
+        @include flex(column, nowrap, flex-start, center);
+        &-img {
+            @include flex(row, nowrap, center, center);
+            @include tablet {
+                max-height: 20rem;
+                overflow-y: hidden;
+            }
+            &--mod {
+                max-height: 9.9031rem;
+                overflow-y: hidden;
+            }
+        }
+        &-contenido {
+            &--mod {
+                margin: 1rem;
+            }   
+        }
+        &-titulo {
+            font-size: 1.6em;
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+        &-cuadro {
+            @include flex(row, nowrap, flex-start, center);
+        }
+        &-categoria {
+            color: map-get($colores, color-fondo-hover);
+            margin-right: 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        &-fecha {
+            margin: 0.5rem 0;
+            color: map-get($colores, color-gris);
+        }
+        &-texto {
+            &--mod{
+                max-height: 150px;
+                overflow-y: hidden;
+            }
+        }
+    }
+    &__boxComentarios {
+        width: 100%;
+        margin: 1rem 0; 
+        padding: 1rem 0; 
+        @include flex (column, nowrap, flex-start, flex-start);
+        @include tablet {
+            padding: 2rem 0; 
+            margin: 2rem 0;
+            width: 90%; 
+        }
+    }
+    &__h3 {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        @include tablet {
+            font-size: 1.8em;
+            margin-bottom: 1.5rem;
+        }
+    }
+    &__form {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: map-get($colores, color-secundario-2);
+        margin-bottom: 1rem;
+        @include tablet {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        &-h5 {
+            font-size: 1.2em;
+            margin-bottom: 1rem;
+            @include tablet {
+                font-weight: bold;
+                font-size: 1.5em;
+                margin-bottom: 1.5rem;
+            }
+        }
+        &-contenedor {
+            @include flex(column, nowrap, center, center);
+            @include tablet {
+                @include flex(row, nowrap, center, center);
+            }
+        }
+    }
+    &__fieldset {
+        width: 100%;
+        padding: 0.5rem;
+        @include tablet {
+            width: 70%;
+        }
+        &-fieldset {
+            width: 100%;
+            @include tablet {
+                @include flex(row, nowrap, flex-start, center);
+            }
+            input {
+                width: 100%;
+                padding: 0.5rem;
+                background-color: map-get($colores, color-secundario);
+                border-radius: 5px;
+            }
+            p {
+                margin-bottom: 0.5rem;
+                font-weight: bold;
+                font-size: 1.2rem;
+                @include tablet {
+                    font-size: 1rem;
+                }
+            }
+        }
+        &--mod {
+            @include flex(row, column, flex-end, center);
+        }
+        &-input {
+            width: 100%;
+            margin-top: 0.5rem;
+            @include tablet {
+                margin-top: 1rem;
+                padding: 0.5rem 3rem;
+                width: auto;
+            }
+        }
+        &-fieldset:first-child {
+            margin-bottom: 1rem;
+            @include tablet {
+                input {
+                    width: 70%;
+                    margin-left: 1rem;
+                }
+            }
+        }
+        &-fieldset:nth-child(2) {
+            input {
+                height: 20em;
+            }
+            @include tablet {
+                p {
+                    display: none;
+                }
+                input {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+    &__normas {
+        width: 100%;
+        list-style-type: disc;
+        margin-top: 2rem;
+        padding: 0.5rem;
+        @include tablet {
+            width: 30%;
+        }
+        &-li {
+            list-style-type: inherit;
+            margin-left: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        &-li:first-child, &-li:nth-child(2) {
+            list-style-type: none;
+            margin-left: 0;
+        }
+        &-li:first-child {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+    }
+}

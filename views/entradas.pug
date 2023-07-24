@@ -1,154 +1,49 @@
 extends ./layout/index
 
 block contenido
-    main.c-entrada 
-        div.c-entrada__contenedor
-            div.c-entrada__cabecera
-                div.c-entrada__titular
-                    h1.c-entrada__titular-h1 #{nombreSitio}
-            div.c-entrada__contenedor2
-                ul.c-entrada__ul
+    main.c-entradas 
+        .c-entradas__contenedor
+            .c-entradas__categorias
+                ul.c-entradas__categorias-ul
                     each categoria in categorias
-                        a.c-entrada__li(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
-            div.c-entrada__contenedor2--mod
-                div.c-entrada__categoria
-                    h5 Rutas
-                    i.fa-solid.fa-chevron-right
-                    i.fa-solid.fa-chevron-right
-                ul.c-entrada__grid 
-                    li.c-entrada__noticia
-                        div.c-entrada__noticia-img
-                            a(href="#")
-                                img(src="assets/img/1.jpg" alt="imagen noticia")
-                        div.c-entrada__noticia-contenido
-                            div.c-entrada__noticia-titulo
-                                a(href="#")
-                                    h5 Titulo de la noticia en cuestion
-                            div.c-entrada__noticia-cuadro
-                                span.c-entrada__noticia-categoria Categoría
-                                span.c-entrada__noticia-fecha - 21/12/2021
-                            p.c-entrada__noticia-texto Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit....
-                    li.c-entrada__noticia
-                        div.c-entrada__noticia-img
-                            a(href="#")
-                                img(src="assets/img/1.jpg" alt="imagen noticia")
-                        div.c-entrada__noticia-contenido
-                            div.c-entrada__noticia-titulo
-                                a(href="#")
-                                    h5 Titulo de la noticia en cuestion
-                            div.c-entrada__noticia-cuadro
-                                span.c-entrada__noticia-categoria Categoría
-                                span.c-entrada__noticia-fecha - 21/12/2021
-                            p.c-entrada__noticia-texto Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit....
-                div.c-entrada__categoria
-                    h5 Noticias
-                    i.fa-solid.fa-chevron-right
-                    i.fa-solid.fa-chevron-right
-                ul.c-entrada__grid--mod
-                    li.c-entrada__noticia
-                        div.c-entrada__noticia-img
-                            a(href="#")
-                                img(src="assets/img/1.jpg" alt="imagen noticia")
-                        div.c-entrada__noticia-contenido
-                            div.c-entrada__noticia-titulo
-                                a(href="#")
-                                    h5 Titulo de la noticia en cuestion
-                            div.c-entrada__noticia-cuadro
-                                span.c-entrada__noticia-categoria Categoría
-                                span.c-entrada__noticia-fecha - 21/12/2021
-                            p.c-entrada__noticia-texto Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit....
-                    li.c-entrada__noticia
-                        div.c-entrada__noticia-img
-                            a(href="#")
-                                img(src="assets/img/1.jpg" alt="imagen noticia")
-                        div.c-entrada__noticia-contenido
-                            div.c-entrada__noticia-titulo
-                                a(href="#")
-                                    h5 Titulo de la noticia en cuestion
-                            div.c-entrada__noticia-cuadro
-                                span.c-entrada__noticia-categoria Categoría
-                                span.c-entrada__noticia-fecha - 21/12/2021
-                            p.c-entrada__noticia-texto Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit....
-                    li.c-entrada__noticia
-                        div.c-entrada__noticia-img
-                            a(href="#")
-                                img(src="assets/img/1.jpg" alt="imagen noticia")
-                        div.c-entrada__noticia-contenido
-                            div.c-entrada__noticia-titulo
-                                a(href="#")
-                                    h5 Titulo de la noticia en cuestion
-                            div.c-entrada__noticia-cuadro
-                                span.c-entrada__noticia-categoria Categoría
-                                span.c-entrada__noticia-fecha - 21/12/2021
-                            p.c-entrada__noticia-texto Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit....
-                    li.c-entrada__noticia
-                        div.c-entrada__noticia-img
-                            a(href="#")
-                                img(src="assets/img/1.jpg" alt="imagen noticia")
-                        div.c-entrada__noticia-contenido
-                            div.c-entrada__noticia-titulo
-                                a(href="#")
-                                    h5 Titulo de la noticia en cuestion
-                            div.c-entrada__noticia-cuadro
-                                span.c-entrada__noticia-categoria Categoría
-                                span.c-entrada__noticia-fecha - 21/12/2021
-                            p.c-entrada__noticia-texto Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit....
-                div.c-entrada__masnoticias
-                    ul.c-entrada__grid--mod2
-                        div.c-entrada__categoria
-                            h5 Consejos
-                            i.fa-solid.fa-chevron-right
-                            i.fa-solid.fa-chevron-right
-                        li.c-entrada__noticia--mod
-                            div.c-entrada__noticia-img--mod
-                                a(href="#")
-                                    img(src="assets/img/1.jpg" alt="imagen noticia")
-                            div.c-entrada__noticia-contenido--mod
-                                div.c-entrada__noticia-titulo
-                                    a(href="#")
-                                        h5 Titulo de la noticia en cuestion
-                                div.c-entrada__noticia-cuadro
-                                    span.c-entrada__noticia-categoria Categoría
-                                    span.c-entrada__noticia-fecha - 21/12/2021
-                                p.c-entrada__noticia-texto Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit....
-                        li.c-entrada__noticia--mod
-                            div.c-entrada__noticia-img--mod
-                                a(href="#")
-                                    img(src="assets/img/1.jpg" alt="imagen noticia")
-                            div.c-entrada__noticia-contenido--mod
-                                div.c-entrada__noticia-titulo
-                                    a(href="#")
-                                        h5 Titulo de la noticia en cuestion
-                                div.c-entrada__noticia-cuadro
-                                    span.c-entrada__noticia-categoria Categoría
-                                    span.c-entrada__noticia-fecha - 21/12/2021
-                                p.c-entrada__noticia-texto Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit....
-                    ul.c-entrada__grid--mod2
-                        div.c-entrada__categoria
-                            h5 P.Física
-                            i.fa-solid.fa-chevron-right
-                            i.fa-solid.fa-chevron-right
-                        li.c-entrada__noticia--mod
-                            div.c-entrada__noticia-img--mod
-                                a(href="#")
-                                    img(src="assets/img/1.jpg" alt="imagen noticia")
-                            div.c-entrada__noticia-contenido--mod
-                                div.c-entrada__noticia-titulo
-                                    a(href="#")
-                                        h5 Titulo de la noticia en cuestion
-                                div.c-entrada__noticia-cuadro
-                                    span.c-entrada__noticia-categoria Categoría
-                                    span.c-entrada__noticia-fecha - 21/12/2021
-                                p.c-entrada__noticia-texto Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit....
-                        li.c-entrada__noticia--mod
-                            div.c-entrada__noticia-img--mod
-                                a(href="#")
-                                    img(src="assets/img/1.jpg" alt="imagen noticia")
-                            div.c-entrada__noticia-contenido--mod
-                                div.c-entrada__noticia-titulo
-                                    a(href="#")
-                                        h5 Titulo de la noticia en cuestion
-                                div.c-entrada__noticia-cuadro
-                                    span.c-entrada__noticia-categoria Categoría
-                                    span.c-entrada__noticia-fecha - 21/12/2021
-                                p.c-entrada__noticia-texto Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit....
+                        a.c-entradas__categorias-li(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
+            each categoria in categorias
+                .c-entradas__listado
+                    .c-entradas__listado-titulo
+                        a(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
+                        i.fa-solid.fa-chevron-right
+                        i.fa-solid.fa-chevron-right
+                    if(categoria.id == 1)
+                        ul.c-entradas__listado-grid
+                            each entrada in entradas
+                                if(categoria.id == entrada.tipoId)
+                                    li.c-entradas__noticia
+                                        .c-entradas__noticia-img
+                                            a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
+                                                img(src=`/assets/img/${entrada.imagen}` alt=`imagen noticia`)
+                                        .c-entradas__noticia-contenido
+                                            .c-entradas__noticia-titulo
+                                                a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
+                                                    h5 #{entrada.titulo}
+                                            .c-entradas__noticia-cuadro
+                                                a.c-entradas__noticia-categoria(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
+                                                span.c-entradas__noticia-fecha #{entrada.updatedAt}
+                                            p.c-entradas__noticia-texto #{entrada.desarrollo}
+                    else if(categoria.id == 2 || categoria.id == 3 || categoria.id == 4 || categoria.id == 5 || categoria.id == 6)    
+                        ul.c-entradas__listado-grid--mod
+                            each entrada in entradas
+                                if(categoria.id == entrada.tipoId)
+                                    li.c-entradas__noticia
+                                        .c-entradas__noticia-img--mod
+                                            a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
+                                                img(src=`/assets/img/${entrada.imagen}` alt=`imagen noticia`)
+                                        .c-entradas__noticia-contenido
+                                            .c-entradas__noticia-titulo
+                                                a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
+                                                    h5 #{entrada.titulo}
+                                            .c-entradas__noticia-cuadro
+                                                a.c-entradas__noticia-categoria(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
+                                                span.c-entradas__noticia-fecha #{entrada.updatedAt}
+                                            p.c-entradas__noticia-texto--mod #{entrada.desarrollo}
+
+    script(type="module", src="/js/entradas.js") 
