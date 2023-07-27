@@ -4,8 +4,6 @@ import { numerosAleatorios } from '../public/js/funciones/funciones.js';
 import { Comentario } from "../models/Comentario.js";
 
 const agregarComentario = async (req, res) => {
-    console.log(req.body)
-    console.log(req.params)
 
     const { alias, comentarioId, comentario } = req.body;
     const { categoria, titulo } = req.params;
@@ -42,11 +40,11 @@ const agregarComentario = async (req, res) => {
                 comentarioId
             }
         });
-        // await Comentario.create({
-        //     alias, 
-        //     comentario,
-        //     comentarioId
-        // })
+        await Comentario.create({
+            alias, 
+            comentario,
+            comentarioId
+        })
         if(mensaje.length === 0){
             mensaje.push({
                 contenido: 'Comentario insertado correctamente. muchas gracias.',
@@ -61,7 +59,6 @@ const agregarComentario = async (req, res) => {
                 mensaje
             })
         } else {
-            console.log(comentario)
             res.render('entradaDetalle', {
                 pagina: 'Entrada Detalle',
                 entrada,

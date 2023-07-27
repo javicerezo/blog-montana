@@ -1,5 +1,11 @@
 extends ./layout/index
 
+block cabecera 
+    .c-cabecera
+        .c-cabecera__contenedor 
+            h1 
+                a.c-cabecera__h1(href="/") #{nombreSitio}
+
 block contenido
     section.c-nosotros 
         .c-nosotros__contenedor 
@@ -21,5 +27,3 @@ block contenido
                             p.u-mensaje.u-mensaje--alerta= m.contenido
                         if(m.tipo == 'exito')
                             p.u-mensaje.u-mensaje--exito= m.contenido
-
-    script(type="module", src="js/nosotros.js") 

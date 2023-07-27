@@ -1,12 +1,22 @@
 extends ./layout/index
 
+block cabecera 
+    .c-cabecera
+        .c-cabecera__contenedor 
+            h1 
+                a.c-cabecera__h1(href="/") #{nombreSitio}
+
+block categorias
+    .c-categorias 
+        .c-categorias__contenedor
+            .c-categorias__categorias
+                ul.c-categorias__categorias-ul
+                    each categoria in todasCategorias
+                        a.c-categorias__categorias-li(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
+
 block contenido
     main.c-entradaDetalle     
         .c-entradaDetalle__contenedor
-            .c-entradaDetalle__categorias
-                ul.c-entradaDetalle__categorias-ul
-                    each cat in todasCategorias
-                        a.c-entradaDetalle__categorias-li(href=`/entradas/${cat.categoria}`) #{cat.categoria}
             .c-entradaDetalle__noticia
                 each entr in entrada
                     h5.c-entradaDetalle__titulo #{entr.titulo}
@@ -37,17 +47,17 @@ block contenido
                                                 span.c-entradaDetalle__noticiasRecientes-fecha #{entrada.updatedAt}
                                             p.c-entradaDetalle__noticiasRecientes-texto--mod #{entrada.desarrollo}
             .c-entradaDetalle__boxComentarios(id="comentarios")
-                if(listadoComentarios)
-                    h3.c-entradaDetalle__h3--mod Comentarios
-                    .c-entradaDetalle__listadoComentarios
-                        each comentario in listadoComentarios 
-                            .c-entradaDetalle__listadoComentarios-comentario
-                                .c-entradaDetalle__listadoComentarios-arriba
-                                    p.c-entradaDetalle__listadoComentarios-p #{comentario.id}.
-                                    p.c-entradaDetalle__listadoComentarios-p #{comentario.alias} -
-                                    p.c-entradaDetalle__listadoComentarios-p.js-entradaDetalle__listadoComentarios-fecha #{comentario.createdAt}
-                                .c-entradaDetalle__listadoComentarios-abajo 
-                                    p.c-entradaDetalle__listadoComentarios-texto #{comentario.comentario}
+                h3.c-entradaDetalle__h3--mod Comentarios
+                .c-entradaDetalle__listadoComentarios
+                    each entr in entrada
+                        each comentario in listadoComentarios
+                            if(entr.id == comentario.comentarioId)
+                                .c-entradaDetalle__listadoComentarios-comentario
+                                    .c-entradaDetalle__listadoComentarios-arriba
+                                        p.c-entradaDetalle__listadoComentarios-p #{comentario.alias} -
+                                        p.c-entradaDetalle__listadoComentarios-p.js-entradaDetalle__listadoComentarios-fecha #{comentario.createdAt}
+                                    .c-entradaDetalle__listadoComentarios-abajo 
+                                        p.c-entradaDetalle__listadoComentarios-texto #{comentario.comentario}
                 each entr in entrada 
                     each categoria in todasCategorias
                         if(entr.tipoId == categoria.id)
@@ -80,5 +90,3 @@ block contenido
                                             p.u-mensaje.u-mensaje--alerta= m.contenido
                                         if(m.tipo == 'exito')
                                             p.u-mensaje.u-mensaje--exito= m.contenido
-
-    script(type="module", src="/js/entradaDetalle.js") 

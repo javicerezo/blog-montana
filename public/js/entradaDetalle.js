@@ -1,8 +1,6 @@
 import UI from './clases/UI.js';
 import { rellenarinput, 
-    comprobarInput, 
-    resetInputs,
-    resetFormulario 
+    comprobarInput
 } from './funciones/funciones.js';
 
 (function(){
@@ -10,8 +8,6 @@ import { rellenarinput,
     const btnEnviar = document.querySelector('.js-entradaDetalle__fieldset-boton');
     const aliasInput = document.querySelector('.js-entradaDetalle__fieldset-alias');
     const comentarioinput = document.querySelector('.js-entradaDetalle__fieldset-textarea');
-    const contenedorMensaje = document.querySelector('.js-entradaDetalle__contenedorMensaje');
-    const formulario = document.querySelector('.js-entradaDetalle__form');
     
     
     let infoComentario = {
@@ -22,6 +18,7 @@ import { rellenarinput,
     const ui = new UI();
 
     const fechaEntrada = document.querySelector('.c-entradaDetalle__comentario-fecha');
+    console.log(fechaEntrada)
     const date =  new Date(fechaEntrada.textContent).toDateString();
     fechaEntrada.textContent = date;
     
@@ -37,29 +34,27 @@ import { rellenarinput,
         fecha.textContent = date;
     });
 
-    // ACTIVAR CUANDO EN EL BACKEND PUEDA HACER VALIDACION CON USUARIOS
+    document.addEventListener('DOMContentLoaded', () => {
+        ui.deshabilitar(btnEnviar);
+    });
 
-    // document.addEventListener('DOMContentLoaded', () => {
-    //     ui.deshabilitar(btnEnviar);
-    // });
-
-    // aliasInput.addEventListener('blur', e => {
-    //     rellenarinput(infoComentario, e);
-    //     let habilitar = comprobarInput(infoComentario);
-    //     if(habilitar) {
-    //         ui.habilitar(btnEnviar);
-    //     } else {
-    //         ui. deshabilitar(btnEnviar);
-    //     }
-    // });
-    // comentarioinput.addEventListener('blur', e => {
-    //     rellenarinput(infoComentario, e);
-    //     let habilitar = comprobarInput(infoComentario);
-    //     if(habilitar) {
-    //         ui.habilitar(btnEnviar);
-    //     } else {
-    //         ui. deshabilitar(btnEnviar);
-    //     }
-    // });
+    aliasInput.addEventListener('blur', e => {
+        rellenarinput(infoComentario, e);
+        let habilitar = comprobarInput(infoComentario);
+        if(habilitar) {
+            ui.habilitar(btnEnviar);
+        } else {
+            ui. deshabilitar(btnEnviar);
+        }
+    });
+    comentarioinput.addEventListener('blur', e => {
+        rellenarinput(infoComentario, e);
+        let habilitar = comprobarInput(infoComentario);
+        if(habilitar) {
+            ui.habilitar(btnEnviar);
+        } else {
+            ui. deshabilitar(btnEnviar);
+        }
+    });
 
 })()

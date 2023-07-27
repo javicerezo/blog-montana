@@ -1,13 +1,23 @@
 extends ./layout/index
 
+block cabecera 
+    .c-cabecera
+        .c-cabecera__contenedor 
+            h1 
+                a.c-cabecera__h1(href="/") #{nombreSitio}
+
+block categorias
+    .c-categorias 
+        .c-categorias__contenedor
+            .c-categorias__categorias
+                ul.c-categorias__categorias-ul
+                    each categoria in todasCategorias
+                        a.c-categorias__categorias-li(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
+
 block contenido
     main.c-entradas 
         .c-entradas__contenedor
-            .c-entradas__categorias
-                ul.c-entradas__categorias-ul
-                    each categoria in categorias
-                        a.c-entradas__categorias-li(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
-            each categoria in categorias
+            each categoria in todasCategorias
                 .c-entradas__listado
                     .c-entradas__listado-titulo
                         a(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
@@ -44,6 +54,4 @@ block contenido
                                             .c-entradas__noticia-cuadro
                                                 a.c-entradas__noticia-categoria(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
                                                 span.c-entradas__noticia-fecha #{entrada.updatedAt}
-                                            p.c-entradas__noticia-texto--mod #{entrada.desarrollo}
-
-    script(type="module", src="/js/entradas.js") 
+                                            p.c-entradas__noticia-texto--mod #{entrada.desarrollo} 

@@ -10,40 +10,6 @@
             width: 80%;
         }
     }
-    &__categorias {
-        margin-bottom: 0.5rem 0;
-        overflow-x: hidden;
-        width: 100%;
-        @include desktop {
-            margin-bottom: 1rem 0;
-        }
-        &-ul {
-            @include flex(row, nowrap, center, center);
-            @include desktop{
-                @include flex(row, nowrap, flex-start, center);
-                border-bottom: 1px solid map-get($colores, color-gris);
-            }
-        }
-        &-li {
-            margin: 1rem 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            background-color: map-get($colores, color-secundario-2);
-            text-transform: capitalize;
-            cursor: pointer;
-            @include desktop {
-                background-color: map-get($colores, color-secundario);
-                border-radius: 0;
-                margin: 0;
-                padding: 1rem;
-                font-size: 1.2em;
-                font-weight: bold;
-                &:hover {
-                    border-bottom: 2px solid map-get($colores, color-gris);
-                }
-            }
-        }
-    }
     &__noticia {
         margin: 1rem 0;
         width: 90%;
@@ -122,7 +88,13 @@
         }
     }
     &__grid {
-        @include grid(4, 0.5rem);
+        @include grid(1, 0.5rem);
+        @include telefonoXL {
+            @include grid(2, 0.5rem);
+        }
+        @include tablet {
+            @include grid(4, 0.5rem);
+        }
     }
     &__noticiasRecientes {
         margin-bottom: 1.5rem;
@@ -204,8 +176,9 @@
         &-p {
             margin-right: 0.5rem;
         }
-        &-p:nth-child(2) {
+        &-p:nth-child(1) {
             font-weight: bold;
+            text-transform: capitalize;
         }
     }
     &__h3 {

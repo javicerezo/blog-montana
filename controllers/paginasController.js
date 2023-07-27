@@ -4,32 +4,40 @@ import { numerosAleatorios } from '../public/js/funciones/funciones.js';
 import { Comentario } from '../models/Comentario.js';
  
 const paginaInicio = async (req, res) => { 
-    const categorias = await Categoria.findAll();
+    // const todasCategorias = await Categoria.findAll();
+    const paginaInicio = '';
     res.render('inicio', {
         pagina: 'Inicio',
-        categorias
+        // todasCategorias,
+        clase: 'c-home',
+        paginaInicio
     });
 }
 
-const paginaNosotros = async (req, res) => { 
-    const categorias = await Categoria.findAll();
+const paginaNosotros = async (req, res) => {
+    const paginaNosotros = '';
+    const todasCategorias = await Categoria.findAll();
     res.render('nosotros', {
         pagina: 'nosotros',
-        categorias
+        paginaNosotros,
+        todasCategorias
     });
 }
 
-const paginaEntradas = async (req, res) => { 
-    const categorias = await Categoria.findAll();
+const paginaEntradas = async (req, res) => {
+    const paginaEntradas = '';
+    const todasCategorias = await Categoria.findAll();
     const entradas = await Entrada.findAll();
     res.render('entradas', {
         pagina: 'entradas',
-        categorias,
+        paginaEntradas,
+        todasCategorias,
         entradas
     });
 }
 
 const paginaEntradasCategoria = async (req, res) => {
+    const paginaEntradasCategoria = '';
     const {categoria} = req.params;
 
     try {
@@ -42,7 +50,8 @@ const paginaEntradasCategoria = async (req, res) => {
         const todasCategorias = await Categoria.findAll();
         const todasEntradas = await Entrada.findAll();
         res.render('categoria', {
-            pagina: 'Listado', 
+            pagina: 'Listado',
+            paginaEntradasCategoria,
             todasCategorias,
             resultadoCategoria,
             todasEntradas
@@ -53,7 +62,9 @@ const paginaEntradasCategoria = async (req, res) => {
 }
 
 const paginaEntradasDetalle = async (req, res) => {
+    const paginaEntradasDetalle = '';
     console.log(req.params)
+
     const { titulo } = req.params;
     const arrayAleatorio = numerosAleatorios(4, 10);
     
@@ -72,6 +83,7 @@ const paginaEntradasDetalle = async (req, res) => {
         const listadoComentarios = await Comentario.findAll();
         res.render('entradaDetalle', {
             pagina: 'Entrada Detalle',
+            paginaEntradasDetalle,
             entrada,
             todasCategorias,
             entradasRecomendadas,
@@ -82,7 +94,7 @@ const paginaEntradasDetalle = async (req, res) => {
     }
 }
 
-const paginaMas = async (req, res) => { 
+const paginaMas = async (req, res) => {
     const categorias = await Categoria.findAll();
     res.render('mas', {
         pagina: 'mas',

@@ -10,40 +10,6 @@
             width: 80%;
         }
     }
-    &__categorias {
-        margin-bottom: 0.5rem 0;
-        overflow-x: hidden;
-        width: 100%;
-        @include desktop {
-            margin-bottom: 1rem 0;
-        }
-        &-ul {
-            @include flex(row, nowrap, center, center);
-            @include desktop{
-                @include flex(row, nowrap, flex-start, center);
-                border-bottom: 1px solid map-get($colores, color-gris);
-            }
-        }
-        &-li {
-            margin: 1rem 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            background-color: map-get($colores, color-secundario-2);
-            text-transform: capitalize;
-            cursor: pointer;
-            @include desktop {
-                background-color: map-get($colores, color-secundario);
-                border-radius: 0;
-                margin: 0;
-                padding: 1rem;
-                font-size: 1.2em;
-                font-weight: bold;
-                &:hover {
-                    border-bottom: 2px solid map-get($colores, color-gris);
-                }
-            }
-        }
-    }
     &__cabecera {
         width: 100%;
         margin: 1rem 0;
