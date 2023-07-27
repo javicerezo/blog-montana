@@ -2,7 +2,7 @@
     @include flex (column, nowrap, center, center);
     &__contenedor {
         width: 95%;
-        margin: 1rem 0;
+        margin: 1.5rem 0;
         @include tablet {
             margin: 2rem 0;
             width: 100%;
@@ -13,15 +13,15 @@
         }
     }
     &__h1 {
-        font-size: 1.7em;
+        font-size: 2em;
         font-weight: bold;
         text-transform: uppercase;
         cursor: pointer;
         @include tablet {
-            font-size: 2.1em;
+            font-size: 2.5em;
         }
         @include desktop {
-            font-size: 2.5em;
+            font-size: 3em;
         }
     }
 }
