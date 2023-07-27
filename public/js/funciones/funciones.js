@@ -1,13 +1,5 @@
 
 
-function guardarStorage(nombreArray, array){
-    localStorage.setItem(nombreArray, JSON.stringify(array));
-};
-
-function cargarStorage (nombreArray) {
-    return JSON.parse(localStorage.getItem(nombreArray)) || [];
-};
-
 function numerosAleatorios (cantidadNumeros, limite) {
     const array = [];
     while (array.length < cantidadNumeros) {
@@ -26,8 +18,33 @@ function numerosAleatorios (cantidadNumeros, limite) {
     return array;
 };
 
+function rellenarinput (objComentario, e) {
+    objComentario[e.target.name] = e.target.value.trim();
+};
+
+function comprobarInput (objComentario) {
+    if(objComentario.alias != '' && objComentario.comentario != '') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function resetInputs(objComentario) {
+    objComentario.alias = '';
+    objComentario.comentario = '';
+};
+
+function resetFormulario (formulario){
+    setTimeout(() => {
+        formulario.reset();
+    }, 3000);
+};
+
 export {
-    guardarStorage,
-    cargarStorage,
-    numerosAleatorios
+    numerosAleatorios,
+    rellenarinput,
+    comprobarInput,
+    resetInputs,
+    resetFormulario
 }

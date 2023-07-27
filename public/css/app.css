@@ -302,6 +302,7 @@ body {
   font-size: 1.7em;
   font-weight: bold;
   text-transform: uppercase;
+  cursor: pointer;
 }
 @media (min-width: 768px) {
   .c-cabecera__h1 {
@@ -1033,10 +1034,46 @@ body {
 }
 @media (min-width: 768px) {
   .c-entradaDetalle__boxComentarios {
-    padding: 2rem 0;
     margin: 2rem 0;
+  }
+}
+@media (min-width: 1024px) {
+  .c-entradaDetalle__boxComentarios {
     width: 90%;
   }
+}
+.c-entradaDetalle__listadoComentarios {
+  margin-bottom: 3rem;
+  width: 100%;
+}
+.c-entradaDetalle__listadoComentarios-comentario {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dotted #ddd;
+}
+@media (min-width: 768px) {
+  .c-entradaDetalle__listadoComentarios-comentario {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+.c-entradaDetalle__listadoComentarios-arriba {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.c-entradaDetalle__listadoComentarios-p {
+  margin-right: 0.5rem;
+}
+.c-entradaDetalle__listadoComentarios-p:nth-child(2) {
+  font-weight: bold;
 }
 .c-entradaDetalle__h3 {
   font-size: 1.5em;
@@ -1047,6 +1084,20 @@ body {
   .c-entradaDetalle__h3 {
     font-size: 1.8em;
     margin-bottom: 1.5rem;
+  }
+}
+.c-entradaDetalle__h3--mod {
+  width: 100%;
+  text-align: start;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #999;
+}
+@media (min-width: 768px) {
+  .c-entradaDetalle__h3--mod {
+    font-size: 1.5em;
   }
 }
 .c-entradaDetalle__form {
@@ -1087,88 +1138,74 @@ body {
     align-items: center;
   }
 }
-.c-entradaDetalle__fieldset {
+.c-entradaDetalle__fieldsetContenedor {
   width: 100%;
   padding: 0.5rem;
 }
 @media (min-width: 768px) {
-  .c-entradaDetalle__fieldset {
+  .c-entradaDetalle__fieldsetContenedor {
     width: 70%;
+    padding: 1rem;
   }
 }
-.c-entradaDetalle__fieldset-fieldset {
+.c-entradaDetalle__fieldsetContenedor--mod {
+  display: flex;
+  flex-flow: row column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.c-entradaDetalle__fieldset {
   width: 100%;
+  margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
-  .c-entradaDetalle__fieldset-fieldset {
+  .c-entradaDetalle__fieldset {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
   }
 }
-.c-entradaDetalle__fieldset-fieldset input {
+.c-entradaDetalle__fieldset input, .c-entradaDetalle__fieldset textarea {
   width: 100%;
   padding: 0.5rem;
   background-color: #fff;
   border-radius: 5px;
 }
-.c-entradaDetalle__fieldset-fieldset p {
+.c-entradaDetalle__fieldset p {
   margin-bottom: 0.5rem;
   font-weight: bold;
   font-size: 1.2rem;
 }
 @media (min-width: 768px) {
-  .c-entradaDetalle__fieldset-fieldset p {
+  .c-entradaDetalle__fieldset p {
     font-size: 1rem;
   }
 }
-.c-entradaDetalle__fieldset--mod {
-  display: flex;
-  flex-flow: row column;
-  justify-content: flex-end;
-  align-items: center;
-}
-.c-entradaDetalle__fieldset-input {
-  width: 100%;
-  margin-top: 0.5rem;
+.c-entradaDetalle__fieldset-id {
+  display: none;
 }
 @media (min-width: 768px) {
-  .c-entradaDetalle__fieldset-input {
-    margin-top: 1rem;
-    padding: 0.5rem 3rem;
-    width: auto;
-  }
-}
-.c-entradaDetalle__fieldset-fieldset:first-child {
-  margin-bottom: 1rem;
-}
-@media (min-width: 768px) {
-  .c-entradaDetalle__fieldset-fieldset:first-child input {
+  .c-entradaDetalle__fieldset:first-child input {
     width: 70%;
     margin-left: 1rem;
   }
 }
-.c-entradaDetalle__fieldset-fieldset:nth-child(2) input {
-  height: 20em;
-}
 @media (min-width: 768px) {
-  .c-entradaDetalle__fieldset-fieldset:nth-child(2) p {
+  .c-entradaDetalle__fieldset:nth-child(2) p {
     display: none;
-  }
-  .c-entradaDetalle__fieldset-fieldset:nth-child(2) input {
-    margin-top: 1rem;
   }
 }
 .c-entradaDetalle__normas {
   width: 100%;
   list-style-type: disc;
-  margin-top: 2rem;
   padding: 0.5rem;
+  font-size: 0.8em;
 }
 @media (min-width: 768px) {
   .c-entradaDetalle__normas {
     width: 30%;
+    font-size: 0.9em;
   }
 }
 .c-entradaDetalle__normas-li {

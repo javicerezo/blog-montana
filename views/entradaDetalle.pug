@@ -37,34 +37,48 @@ block contenido
                                                 span.c-entradaDetalle__noticiasRecientes-fecha #{entrada.updatedAt}
                                             p.c-entradaDetalle__noticiasRecientes-texto--mod #{entrada.desarrollo}
             .c-entradaDetalle__boxComentarios(id="comentarios")
-                h3.c-entradaDetalle__h3 Comentarios
-                form.c-entradaDetalle__form(action="/", method="POST")
-                    h5.c-entradaDetalle__form-h5 Deja tu comentario
-                    .c-entradaDetalle__form-contenedor
-                        .c-entradaDetalle__fieldset
-                            fieldset.c-entradaDetalle__fieldset-fieldset
-                                p Tu alias:
-                                input.js-entradaDetalle__fieldset-alias(type="text", name="alias") 
-                            fieldset.c-entradaDetalle__fieldset-fieldset
-                                p Deja tu comentario:
-                                input.js-entradaDetalle__fieldset-comentario(type="textarea", name="texto") 
-                            fieldset.c-entradaDetalle__fieldset--mod
-                                input.c-button.c-button--amarillo.c-entradaDetalle__fieldset-input.js-entradaDetalle__fieldset-boton(type="submit", value="enviar")
-                        ul.c-entradaDetalle__normas
-                            li.c-entradaDetalle__normas-li Normas de uso:
-                            li.c-entradaDetalle__normas-li Se reserva el derecho a eliminar aquellos comentarios que: 
-                            li.c-entradaDetalle__normas-li No se ajusten al tema del artículo.
-                            li.c-entradaDetalle__normas-li Contengan mensajes ofensivos, discriminatorios, racistas o xenófobos. 
-                            li.c-entradaDetalle__normas-li Promuevan o apoyen actividades ilegales. 
-                            li.c-entradaDetalle__normas-li Suministren información acerca de usuarios sin su consentiento.
-                            li.c-entradaDetalle__normas-li Contengan spam. 
-                .js-entradaDetalle__contenedorMensaje
-
-
-
-
-
-
-
+                if(listadoComentarios)
+                    h3.c-entradaDetalle__h3--mod Comentarios
+                    .c-entradaDetalle__listadoComentarios
+                        each comentario in listadoComentarios 
+                            .c-entradaDetalle__listadoComentarios-comentario
+                                .c-entradaDetalle__listadoComentarios-arriba
+                                    p.c-entradaDetalle__listadoComentarios-p #{comentario.id}.
+                                    p.c-entradaDetalle__listadoComentarios-p #{comentario.alias} -
+                                    p.c-entradaDetalle__listadoComentarios-p.js-entradaDetalle__listadoComentarios-fecha #{comentario.createdAt}
+                                .c-entradaDetalle__listadoComentarios-abajo 
+                                    p.c-entradaDetalle__listadoComentarios-texto #{comentario.comentario}
+                each entr in entrada 
+                    each categoria in todasCategorias
+                        if(entr.tipoId == categoria.id)
+                            h3.c-entradaDetalle__h3 Comentarios
+                            form.c-entradaDetalle__form.js-entradaDetalle__form(action=`/entradas/${categoria.categoria}/${entr.titulo}` method="POST")
+                                h5.c-entradaDetalle__form-h5 Deja tu comentario
+                                .c-entradaDetalle__form-contenedor
+                                    .c-entradaDetalle__fieldsetContenedor
+                                        fieldset.c-entradaDetalle__fieldset
+                                            p Tu alias:
+                                            input.js-entradaDetalle__fieldset-alias(type="text", name="alias", value=alias) 
+                                            input.c-entradaDetalle__fieldset-id(type="text", name="comentarioId", value=`${entr.id}`) 
+                                        fieldset.c-entradaDetalle__fieldset
+                                            p Deja tu comentario:
+                                            textarea.js-entradaDetalle__fieldset-textarea(name="comentario", cols="30", rows="10")= comentario
+                                        fieldset.c-entradaDetalle__fieldsetContenedor--mod
+                                            input.c-button.c-button--amarillo.js-entradaDetalle__fieldset-boton(type="submit", value="enviar")
+                                    ul.c-entradaDetalle__normas
+                                        li.c-entradaDetalle__normas-li Normas de uso:
+                                        li.c-entradaDetalle__normas-li Se reserva el derecho a eliminar aquellos comentarios que: 
+                                        li.c-entradaDetalle__normas-li No se ajusten al tema del artículo.
+                                        li.c-entradaDetalle__normas-li Contengan mensajes ofensivos, discriminatorios, racistas o xenófobos. 
+                                        li.c-entradaDetalle__normas-li Promuevan o apoyen actividades ilegales. 
+                                        li.c-entradaDetalle__normas-li Suministren información acerca de usuarios sin su consentiento.
+                                        li.c-entradaDetalle__normas-li Contengan spam. 
+                            .js-entradaDetalle__contenedorMensaje                            
+                                if(mensaje)
+                                    each m in mensaje
+                                        if(m.tipo == 'alerta')
+                                            p.u-mensaje.u-mensaje--alerta= m.contenido
+                                        if(m.tipo == 'exito')
+                                            p.u-mensaje.u-mensaje--exito= m.contenido
 
     script(type="module", src="/js/entradaDetalle.js") 

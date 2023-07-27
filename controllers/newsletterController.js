@@ -9,9 +9,8 @@ const agregarNewsletter = async (req, res) => {
             email
         }
     });
-    console.log(respuesta)
-    if(respuesta.length == 0){
-        console.log('agregar a bd')
+    
+    if(respuesta.length == 0) {
         try {
             await Newsletter.create({
                 email
@@ -27,18 +26,21 @@ const agregarNewsletter = async (req, res) => {
         } catch (error) {
             console.log(error);
         }
-    } 
+    }
     if(respuesta.length > 0) {
-        console.log('no agregar a bd')
-        mensaje.push({
-            contenido: 'ya estabas inscrito a nuestra newsletter. muchas gracias',
-            tipo: 'alerta'
-        });
-        res.render('nosotros', {
-            pagina: 'Nosotros',
-            mensaje,
-            email
-        })
+        try {
+            mensaje.push({
+                contenido: 'ya estabas inscrito a nuestra newsletter. muchas gracias',
+                tipo: 'alerta'
+            });
+            res.render('nosotros', {
+                pagina: 'Nosotros',
+                mensaje,
+                email
+            })
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 

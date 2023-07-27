@@ -173,10 +173,39 @@
         margin: 1rem 0; 
         padding: 1rem 0; 
         @include flex (column, nowrap, flex-start, flex-start);
-        @include tablet {
-            padding: 2rem 0; 
+        @include tablet { 
             margin: 2rem 0;
+        }
+        @include desktop {
             width: 90%; 
+        }
+    }
+    &__listadoComentarios {
+        margin-bottom: 3rem;
+        width: 100%;
+        &-comentario {
+            @include flex(column, nowrap, center, flex-start);
+            margin-left: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dotted map-get($colores, color-gris-claro);
+            @include tablet {
+                margin-left: 1rem;
+                margin-bottom: 1rem;
+                padding-bottom: 1rem;
+            }
+        }
+        &-arriba {
+            @include flex(row, nowrap, flex-start, center);
+        }
+        // &-abajo {
+
+        // }
+        &-p {
+            margin-right: 0.5rem;
+        }
+        &-p:nth-child(2) {
+            font-weight: bold;
         }
     }
     &__h3 {
@@ -186,6 +215,18 @@
         @include tablet {
             font-size: 1.8em;
             margin-bottom: 1.5rem;
+        }
+        &--mod {
+            width: 100%;
+            text-align: start;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid map-get($colores, color-gris);
+            @include tablet {
+                font-size: 1.5em;
+            }
         }
     }
     &__form {
@@ -214,74 +255,64 @@
             }
         }
     }
-    &__fieldset {
+    &__fieldsetContenedor {
         width: 100%;
         padding: 0.5rem;
         @include tablet {
             width: 70%;
-        }
-        &-fieldset {
-            width: 100%;
-            @include tablet {
-                @include flex(row, nowrap, flex-start, center);
-            }
-            input {
-                width: 100%;
-                padding: 0.5rem;
-                background-color: map-get($colores, color-secundario);
-                border-radius: 5px;
-            }
-            p {
-                margin-bottom: 0.5rem;
-                font-weight: bold;
-                font-size: 1.2rem;
-                @include tablet {
-                    font-size: 1rem;
-                }
-            }
+            padding: 1rem;
         }
         &--mod {
             @include flex(row, column, flex-end, center);
         }
-        &-input {
+    }
+    &__fieldset {
+        width: 100%;
+        margin-bottom: 1rem;
+        @include tablet {
+            @include flex(row, nowrap, flex-start, center);
+        }
+        input, textarea {
             width: 100%;
-            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background-color: map-get($colores, color-secundario);
+            border-radius: 5px;
+        }
+        p {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            font-size: 1.2rem;
             @include tablet {
-                margin-top: 1rem;
-                padding: 0.5rem 3rem;
-                width: auto;
+                font-size: 1rem;
             }
         }
-        &-fieldset:first-child {
-            margin-bottom: 1rem;
+        &-id{
+            display: none;
+        }
+    }
+    &__fieldset:first-child {
+        input {
             @include tablet {
-                input {
-                    width: 70%;
-                    margin-left: 1rem;
-                }
+                width: 70%;
+                margin-left: 1rem;
             }
         }
-        &-fieldset:nth-child(2) {
-            input {
-                height: 20em;
-            }
+    }
+    &__fieldset:nth-child(2) {
+        p {
             @include tablet {
-                p {
-                    display: none;
-                }
-                input {
-                    margin-top: 1rem;
-                }
+                display: none;
             }
         }
     }
     &__normas {
         width: 100%;
         list-style-type: disc;
-        margin-top: 2rem;
         padding: 0.5rem;
+        font-size: 0.8em;
         @include tablet {
             width: 30%;
+            font-size: 0.9em;
         }
         &-li {
             list-style-type: inherit;
@@ -296,6 +327,5 @@
             font-weight: bold;
             margin-bottom: 1rem;
         }
-        
     }
 }
