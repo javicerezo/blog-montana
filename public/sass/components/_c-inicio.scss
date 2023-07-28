@@ -1,0 +1,45 @@
+.c-inicio {
+    @include flex (column, nowrap, center, center);
+    &__contenedor {
+        margin: 1rem 0;
+        @include flex (column, nowrap, center, center);
+        width: 95%;
+        @include tablet {
+            width: 90%;
+            margin: 2rem 0;
+        }
+        @include desktop {
+            width: 80%;
+        }
+    }
+    &__h2 {
+        font-size: 2em;
+        font-style: italic;
+        font-weight: bold;
+        margin: 1rem 0;
+        @include tablet {
+            font-size: 3em;
+            margin: 2rem;
+        }
+    }
+    &__sobreNosotros {
+        @include flex(column, nowrap, center, center);
+        @include tablet {
+            @include flex(row, nowrap, space-between, flex-start);
+            width: 90%;
+        }
+        &-p {
+            margin: 1rem;
+            @include tablet {
+                width: 50%;
+            }
+        }
+        &-img {
+            margin: 1rem;
+            @include tablet {
+                width: 50%;
+                max-width: 21.875rem;
+            }
+        }
+    }
+}

@@ -292,17 +292,31 @@ body {
   position: absolute;
   right: 0;
   left: 0;
-  color: #fff;
+}
+.c-home .c-header__nav {
+  background-color: transparent;
 }
 
 .c-slider__contenedor {
-  background-image: url("../../assets/img/1.jpg");
+  background-image: url("../../assets/img/portada1.jpg");
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 90vh;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  color: #fff;
+}
+.c-slider__h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.c-slider__em {
+  font-size: 1.5em;
+  font-style: italic;
 }
 
 .c-cabecera {
@@ -341,6 +355,76 @@ body {
 @media (min-width: 1024px) {
   .c-cabecera__h1 {
     font-size: 3em;
+  }
+}
+
+.c-inicio {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.c-inicio__contenedor {
+  margin: 1rem 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+}
+@media (min-width: 768px) {
+  .c-inicio__contenedor {
+    width: 90%;
+    margin: 2rem 0;
+  }
+}
+@media (min-width: 1024px) {
+  .c-inicio__contenedor {
+    width: 80%;
+  }
+}
+.c-inicio__h2 {
+  font-size: 2em;
+  font-style: italic;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+@media (min-width: 768px) {
+  .c-inicio__h2 {
+    font-size: 3em;
+    margin: 2rem;
+  }
+}
+.c-inicio__sobreNosotros {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .c-inicio__sobreNosotros {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+  }
+}
+.c-inicio__sobreNosotros-p {
+  margin: 1rem;
+}
+@media (min-width: 768px) {
+  .c-inicio__sobreNosotros-p {
+    width: 50%;
+  }
+}
+.c-inicio__sobreNosotros-img {
+  margin: 1rem;
+}
+@media (min-width: 768px) {
+  .c-inicio__sobreNosotros-img {
+    width: 50%;
+    max-width: 21.875rem;
   }
 }
 

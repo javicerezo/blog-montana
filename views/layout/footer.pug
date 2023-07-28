@@ -17,11 +17,15 @@ footer.c-footer
             p 1995-2023 Tienda de Esquí y montaña S.L. Todos los derechos reservados
 
 script(type="module", src="/js/header.js")
-if(paginaEntradasCategoria)
-    script(type="module", src="/js/categoria.js") 
-if(paginaEntradasDetalle)
-    script(type="module", src="/js/entradaDetalle.js")
-if(paginaEntradas)
-    script(type="module", src="/js/entradas.js")
-if(paginaNosotros)
+
+if(scripts == 'paginaInicio')
+    script(type="module", src="js/inicio.js") 
+if(scripts == 'paginaNosotros')
     script(type="module", src="js/nosotros.js") 
+if(scripts == 'paginaEntradas')
+    script(type="module", src="/js/entradas.js") 
+if(scripts == 'paginaEntradasCategoria')
+    script(type="module", src="/js/entradas.js") 
+if(scripts == 'paginaEntradasDetalle')
+    script(type="module", src="/js/entradas.js") 
+    script(type="module", src="/js/entradaDetalle.js")

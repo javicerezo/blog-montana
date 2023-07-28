@@ -1,46 +1,24 @@
 extends ./layout/index
 
 block cabecera 
-    .c-cabecera
-        .c-cabecera__contenedor 
-            h1 
-                a.c-cabecera__h1(href="/") #{nombreSitio}
+    include ./layout/bloque_cabecera
 
 block categorias
-    .c-categorias 
-        .c-categorias__contenedor
-            .c-categorias__categorias
-                ul.c-categorias__categorias-ul
-                    each categoria in todasCategorias
-                        a.c-categorias__categorias-li(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
+    include ./layout/bloque_categorias
                         
 block contenido
     main.c-categoria     
         .c-categoria__contenedor
-            each cat in resultadoCategoria
+            each categoria in resultadoCategoria
                 .c-categoria__cabecera
-                    h2.c-categoria__cabecera-h1 #{cat.categoria}
+                    h2.c-categoria__cabecera-h1 #{categoria.categoria}
                 .c-categoria__paginacion
                     i.fa-solid.fa-chevron-left
                     p.c-categoria__paginacion-p 1
                     p.c-categoria__paginacion-p de
                     p.c-categoria__paginacion-p 123
                     i.fa-solid.fa-chevron-right
-                .c-categoria__grid
-                    each entr in todasEntradas 
-                        if(cat.id == entr.tipoId)
-                            li.c-categoria__noticia
-                                .c-categoria__noticia-img--mod
-                                    a(href=`/entradas/${cat.categoria}/${entr.titulo}`)
-                                        img(src=`/assets/img/${entr.imagen}` alt=`imagen noticia`)
-                                .c-categoria__noticia-contenido
-                                    .c-categoria__noticia-titulo
-                                        a(href=`/entradas/${cat.categoria}/${entr.titulo}`)
-                                            h5 #{entr.titulo}
-                                    .c-categoria__noticia-cuadro
-                                        a.c-categoria__noticia-categoria(href=`/entradas/${cat.categoria}`) #{cat.categoria}
-                                        span.c-categoria__noticia-fecha #{entr.updatedAt}
-                                    p.c-categoria__noticia-texto--mod #{entr.desarrollo}
+                include ./layout/bloque_entradas--mod
                 .c-categoria__paginacion
                     i.fa-solid.fa-chevron-left
                     p.c-categoria__paginacion-p 1

@@ -1,0 +1,15 @@
+ul.c-entradas__listado-grid
+    each entrada in todasEntradas
+        if(categoria.id == entrada.tipoId)
+            li.c-entradas__noticia
+                .c-entradas__noticia-img
+                    a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
+                        img(src=`/assets/img/${entrada.imagen}` alt=`imagen noticia`)
+                .c-entradas__noticia-contenido
+                    .c-entradas__noticia-titulo
+                        a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
+                            h5 #{entrada.titulo}
+                    .c-entradas__noticia-cuadro
+                        a.c-entradas__noticia-categoria(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
+                        span.c-entradas__noticia-fecha #{entrada.updatedAt}
+                    p.c-entradas__noticia-texto #{entrada.desarrollo}

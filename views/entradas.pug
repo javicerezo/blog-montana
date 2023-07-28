@@ -1,18 +1,10 @@
 extends ./layout/index
 
 block cabecera 
-    .c-cabecera
-        .c-cabecera__contenedor 
-            h1 
-                a.c-cabecera__h1(href="/") #{nombreSitio}
+    include ./layout/bloque_cabecera
 
 block categorias
-    .c-categorias 
-        .c-categorias__contenedor
-            .c-categorias__categorias
-                ul.c-categorias__categorias-ul
-                    each categoria in todasCategorias
-                        a.c-categorias__categorias-li(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
+    include ./layout/bloque_categorias
 
 block contenido
     main.c-entradas 
@@ -24,34 +16,6 @@ block contenido
                         i.fa-solid.fa-chevron-right
                         i.fa-solid.fa-chevron-right
                     if(categoria.id == 1)
-                        ul.c-entradas__listado-grid
-                            each entrada in entradas
-                                if(categoria.id == entrada.tipoId)
-                                    li.c-entradas__noticia
-                                        .c-entradas__noticia-img
-                                            a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
-                                                img(src=`/assets/img/${entrada.imagen}` alt=`imagen noticia`)
-                                        .c-entradas__noticia-contenido
-                                            .c-entradas__noticia-titulo
-                                                a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
-                                                    h5 #{entrada.titulo}
-                                            .c-entradas__noticia-cuadro
-                                                a.c-entradas__noticia-categoria(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
-                                                span.c-entradas__noticia-fecha #{entrada.updatedAt}
-                                            p.c-entradas__noticia-texto #{entrada.desarrollo}
+                        include ./layout/bloque_entradas
                     else if(categoria.id == 2 || categoria.id == 3 || categoria.id == 4 || categoria.id == 5 || categoria.id == 6)    
-                        ul.c-entradas__listado-grid--mod
-                            each entrada in entradas
-                                if(categoria.id == entrada.tipoId)
-                                    li.c-entradas__noticia
-                                        .c-entradas__noticia-img--mod
-                                            a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
-                                                img(src=`/assets/img/${entrada.imagen}` alt=`imagen noticia`)
-                                        .c-entradas__noticia-contenido
-                                            .c-entradas__noticia-titulo
-                                                a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
-                                                    h5 #{entrada.titulo}
-                                            .c-entradas__noticia-cuadro
-                                                a.c-entradas__noticia-categoria(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
-                                                span.c-entradas__noticia-fecha #{entrada.updatedAt}
-                                            p.c-entradas__noticia-texto--mod #{entrada.desarrollo} 
+                        include ./layout/bloque_entradas--mod

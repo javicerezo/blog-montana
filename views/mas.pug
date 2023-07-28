@@ -1,10 +1,7 @@
 extends ./layout/index
 
 block cabecera 
-    .c-cabecera
-        .c-cabecera__contenedor 
-            h1 
-                a.c-cabecera__h1(href="/") #{nombreSitio}
+    include ./layout/bloque_cabecera
                 
 block contenido
     h1 mas

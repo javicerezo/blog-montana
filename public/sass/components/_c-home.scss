@@ -3,6 +3,8 @@
     .c-header {
         background-color: transparent;
         @include position(absolute, null, 0, null, 0);
-        color: map-get($colores, color-secundario);
+        &__nav{
+            background-color: transparent;
+        }
     }
 }

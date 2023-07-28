@@ -1,0 +1,16 @@
+.c-entradaDetalle__grid
+    each entrada in entradasRecomendadas 
+        each categoria in todasCategorias
+            if(categoria.id == entrada.tipoId)
+                li.c-entradaDetalle__noticiasRecientes
+                        .c-entradaDetalle__noticiasRecientes-img--mod
+                            a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
+                                img(src=`/assets/img/${entrada.imagen}` alt=`imagen noticia`)
+                        .c-entradaDetalle__noticiasRecientes-contenido
+                            .c-entradaDetalle__noticiasRecientes-titulo
+                                a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
+                                    h5 #{entrada.titulo}
+                            .c-entradaDetalle__noticiasRecientes-cuadro
+                                a.c-entradaDetalle__noticiasRecientes-categoria(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
+                                span.c-entradaDetalle__noticiasRecientes-fecha #{entrada.updatedAt}
+                            p.c-entradaDetalle__noticiasRecientes-texto--mod #{entrada.desarrollo}

@@ -1,18 +1,10 @@
 extends ./layout/index
 
 block cabecera 
-    .c-cabecera
-        .c-cabecera__contenedor 
-            h1 
-                a.c-cabecera__h1(href="/") #{nombreSitio}
+    include ./layout/bloque_cabecera
 
 block categorias
-    .c-categorias 
-        .c-categorias__contenedor
-            .c-categorias__categorias
-                ul.c-categorias__categorias-ul
-                    each categoria in todasCategorias
-                        a.c-categorias__categorias-li(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
+    include ./layout/bloque_categorias
 
 block contenido
     main.c-entradaDetalle     
@@ -30,22 +22,7 @@ block contenido
                     p.c-entradaDetalle__texto #{entr.desarrollo}
             .c-entradaDetalle__boxRecientes 
                 h3.c-entradaDetalle__recientes Artículos más recientes 
-                .c-entradaDetalle__grid
-                    each entrada in entradasRecomendadas 
-                        each categoria in todasCategorias
-                            if(categoria.id == entrada.tipoId)
-                                li.c-entradaDetalle__noticiasRecientes
-                                        .c-entradaDetalle__noticiasRecientes-img--mod
-                                            a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
-                                                img(src=`/assets/img/${entrada.imagen}` alt=`imagen noticia`)
-                                        .c-entradaDetalle__noticiasRecientes-contenido
-                                            .c-entradaDetalle__noticiasRecientes-titulo
-                                                a(href=`/entradas/${categoria.categoria}/${entrada.titulo}`)
-                                                    h5 #{entrada.titulo}
-                                            .c-entradaDetalle__noticiasRecientes-cuadro
-                                                a.c-entradaDetalle__noticiasRecientes-categoria(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
-                                                span.c-entradaDetalle__noticiasRecientes-fecha #{entrada.updatedAt}
-                                            p.c-entradaDetalle__noticiasRecientes-texto--mod #{entrada.desarrollo}
+                include ./layout/bloque_entradas-recomendadas
             .c-entradaDetalle__boxComentarios(id="comentarios")
                 h3.c-entradaDetalle__h3--mod Comentarios
                 .c-entradaDetalle__listadoComentarios

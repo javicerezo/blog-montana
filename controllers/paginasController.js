@@ -4,57 +4,79 @@ import { numerosAleatorios } from '../public/js/funciones/funciones.js';
 import { Comentario } from '../models/Comentario.js';
  
 const paginaInicio = async (req, res) => { 
-    // const todasCategorias = await Categoria.findAll();
-    const paginaInicio = '';
-    res.render('inicio', {
-        pagina: 'Inicio',
-        // todasCategorias,
-        clase: 'c-home',
-        paginaInicio
-    });
+    const arrayAleatorio = numerosAleatorios(4, 10);
+    const scripts = 'paginaInicio';
+    const promiseDB = [];
+    promiseDB.push(Categoria.findAll());
+    promiseDB.push(Entrada.findAll({
+        where: {
+            id: arrayAleatorio
+        }
+    }));
+    
+    try {
+        const resultado = await Promise.all(promiseDB);
+        res.render('inicio', {
+            pagina: 'Inicio',
+            clase: 'c-home',
+            paginaInicio,
+            todasCategorias: resultado[0],
+            entradasRecomendadas: resultado[1],
+            scripts
+        });
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 const paginaNosotros = async (req, res) => {
-    const paginaNosotros = '';
+    const scripts = 'paginaNosotros';
     const todasCategorias = await Categoria.findAll();
     res.render('nosotros', {
         pagina: 'nosotros',
-        paginaNosotros,
+        scripts,
         todasCategorias
     });
 }
 
 const paginaEntradas = async (req, res) => {
-    const paginaEntradas = '';
-    const todasCategorias = await Categoria.findAll();
-    const entradas = await Entrada.findAll();
-    res.render('entradas', {
-        pagina: 'entradas',
-        paginaEntradas,
-        todasCategorias,
-        entradas
-    });
+    const scripts = 'paginaEntradas';
+    const promiseDB = [];
+    promiseDB.push(Categoria.findAll());
+    promiseDB.push(Entrada.findAll());
+    try {
+        const resultado = await Promise.all(promiseDB);
+        res.render('entradas', {
+            pagina: 'entradas',
+            scripts,
+            todasCategorias: resultado[0],
+            todasEntradas: resultado[1]
+        });
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 const paginaEntradasCategoria = async (req, res) => {
-    const paginaEntradasCategoria = '';
+    const scripts = 'paginaEntradasCategoria';
     const {categoria} = req.params;
+    const promiseDB = [];
+    promiseDB.push(Categoria.findAll());
+    promiseDB.push(Categoria.findAll({
+        where: {
+            categoria
+        }
+    }));
+    promiseDB.push(Entrada.findAll());
 
     try {
-        const resultadoCategoria = await Categoria.findAll({
-            where: {
-                categoria
-            }
-        });
-        
-        const todasCategorias = await Categoria.findAll();
-        const todasEntradas = await Entrada.findAll();
+        const resultado = await Promise.all(promiseDB);
         res.render('categoria', {
             pagina: 'Listado',
-            paginaEntradasCategoria,
-            todasCategorias,
-            resultadoCategoria,
-            todasEntradas
+            scripts,
+            todasCategorias: resultado[0],
+            resultadoCategoria: resultado[1],
+            todasEntradas: resultado[2]
         })
     } catch (error) {
         console.log(error);
@@ -62,9 +84,7 @@ const paginaEntradasCategoria = async (req, res) => {
 }
 
 const paginaEntradasDetalle = async (req, res) => {
-    const paginaEntradasDetalle = '';
-    console.log(req.params)
-
+    const scripts = 'paginaEntradasDetalle';
     const { titulo } = req.params;
     const arrayAleatorio = numerosAleatorios(4, 10);
     
@@ -83,7 +103,7 @@ const paginaEntradasDetalle = async (req, res) => {
         const listadoComentarios = await Comentario.findAll();
         res.render('entradaDetalle', {
             pagina: 'Entrada Detalle',
-            paginaEntradasDetalle,
+            scripts,
             entrada,
             todasCategorias,
             entradasRecomendadas,

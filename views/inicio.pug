@@ -3,23 +3,34 @@ extends ./layout/index
 block slider 
     .c-slider 
         .c-slider__contenedor
-            h1 #{nombreSitio}
-            em aventura
+            h1.c-slider__h1 #{nombreSitio}
+            em.c-slider__em aventura
 
 block contenido
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
-    h1 #{pagina}
+    main.c-inicio 
+        .c-inicio__contenedor 
+            h2.c-inicio__h2 Sobre Nosotros
+            .c-inicio__sobreNosotros 
+                p.c-inicio__sobreNosotros-p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa delectus dolor nobis ullam quibusdam saepe, commodi, facilis minus dolorum sit voluptates corrupti. Earum fugiat quis voluptatum quia voluptate a fugit?Quo eius, quos quidem exercitationem dolor quod minima esse laboriosam minus velit repellendus illo porro labore odit repudiandae suscipit sit! Impedit explicabo rem aspernatur, voluptatem facere laudantium id delectus obcaecati.Aspernatur nobis veritatis atque ab dolor nesciunt dolorem sit veniam eligendi repellat odio libero, magnam nihil pariatur possimus autem harum voluptas aperiam delectus quam suscipit aut ipsa et?
+                .c-inicio__sobreNosotros-img
+                    img(src="/assets/img/portada2.jpg" alt="imagen sobre nosotros")
+            h2.c-inicio__h2 Últimas entradas de blog
+            .c-inicio__ultimasEntradas
+            include ./layout/bloque_entradas-recomendadas              
+            
+            
+            h1 #{pagina}
+            h1 #{pagina}
+            h1 #{pagina}
+            h1 #{pagina}
+            h1 #{pagina}
+            h1 #{pagina}
+            h1 #{pagina}
+            h1 #{pagina}
+            h1 #{pagina}
+            h1 #{pagina}
+            h1 #{pagina}
+            h1 #{pagina}
+            h1 #{pagina}
+            h1 #{pagina}
+            h1 #{pagina}

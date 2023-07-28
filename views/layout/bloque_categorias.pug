@@ -1,0 +1,6 @@
+.c-categorias 
+    .c-categorias__contenedor
+        .c-categorias__categorias
+            ul.c-categorias__categorias-ul
+                each categoria in todasCategorias
+                    a.c-categorias__categorias-li(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
