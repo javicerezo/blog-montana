@@ -5,7 +5,7 @@
 - [Haz click para ver el proyecto](https://javicerezo.github.io/blog-montana/) 🚀
 
 ## Descripción 📑
-
+Blog de montaña
 
 ## Tecnologías 🛠
 <!-- Iconos sacados de y https://github.com/alexandresanlim/Badges4-README.md-Profile -->
