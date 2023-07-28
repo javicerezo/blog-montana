@@ -19,9 +19,9 @@ Blog de montaña
 ## Vista previa del proyecto
 Si quieres hechar un vistazo al proyecto, te recomiendo:
 
-![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/blog_montana/master/public/assets/img/blog2.png)
-![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/blog_montana/master/public/assets/img/blog3.png)
-![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/blog_montana/master/public/assets/img/blog4.png)
+![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/blog-montana/master/public/assets/img/blog2.png)
+![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/blog-montana/master/public/assets/img/blog3.png)
+![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/blog-montana/master/public/assets/img/blog4.png)
 
 ## Autor ✒️
 **JAVI CEREZO**
