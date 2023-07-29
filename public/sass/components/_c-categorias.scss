@@ -10,17 +10,35 @@
         }
     }
     &__categorias {
-        margin-bottom: 0.5rem 0;
-        overflow-x: hidden;
+        position: relative;
+        @include flex(column, nowrap, center, center);
         width: 100%;
         @include desktop {
             margin-bottom: 1rem 0;
         }
+        &-botones{
+            width: 100%;
+            position: absolute;
+            @include tablet {
+                display: none;
+            }
+            i:first-child {
+                @include position(absolute, -7px, null, null, 0);
+            }
+            i:last-child {
+                @include position(absolute, -7px, 0, null, null);
+            }
+        }
         &-ul {
-            @include flex(row, nowrap, center, center);
+            width: 90%;
+            overflow-x: hidden;
+            @include flex(row, nowrap, flex-start, center);
             @include desktop{
                 @include flex(row, nowrap, flex-start, center);
                 border-bottom: 1px solid map-get($colores, color-gris);
+            }
+            &--mod {
+                @include flex(row, nowrap, flex-end, center);
             }
         }
         &-li {

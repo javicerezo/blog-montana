@@ -1,6 +1,9 @@
 .c-categorias 
     .c-categorias__contenedor
         .c-categorias__categorias
-            ul.c-categorias__categorias-ul
+            .c-categorias__categorias-botones
+                i.fa-solid.fa-arrow-left.js-categorias__boton-left
+                i.fa-solid.fa-arrow-right.js-categorias__boton-right
+            ul.c-categorias__categorias-ul.js-categorias__categorias-ul
                 each categoria in todasCategorias
                     a.c-categorias__categorias-li(href=`/entradas/${categoria.categoria}`) #{categoria.categoria}
