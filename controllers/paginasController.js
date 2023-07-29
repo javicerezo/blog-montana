@@ -13,15 +13,20 @@ const paginaInicio = async (req, res) => {
             id: arrayAleatorio
         }
     }));
-    
+    promiseDB.push(Entrada.findAll({
+        where: {
+            tipoId: 1
+        }
+    }));
     try {
         const resultado = await Promise.all(promiseDB);
         res.render('inicio', {
-            pagina: 'Inicio',
+            pagina: 'Home',
             clase: 'c-home',
             paginaInicio,
             todasCategorias: resultado[0],
             entradasRecomendadas: resultado[1],
+            todasEntradas: resultado[2],
             scripts
         });
     } catch (error) {
@@ -33,7 +38,7 @@ const paginaNosotros = async (req, res) => {
     const scripts = 'paginaNosotros';
     const todasCategorias = await Categoria.findAll();
     res.render('nosotros', {
-        pagina: 'nosotros',
+        pagina: '¿Quienes somos?',
         scripts,
         todasCategorias
     });
@@ -47,7 +52,7 @@ const paginaEntradas = async (req, res) => {
     try {
         const resultado = await Promise.all(promiseDB);
         res.render('entradas', {
-            pagina: 'entradas',
+            pagina: 'Artículos de Blog',
             scripts,
             todasCategorias: resultado[0],
             todasEntradas: resultado[1]
@@ -72,7 +77,7 @@ const paginaEntradasCategoria = async (req, res) => {
     try {
         const resultado = await Promise.all(promiseDB);
         res.render('categoria', {
-            pagina: 'Listado',
+            pagina: 'Listado por Categoria',
             scripts,
             todasCategorias: resultado[0],
             resultadoCategoria: resultado[1],
@@ -94,12 +99,12 @@ const paginaEntradasDetalle = async (req, res) => {
             where: {
                 id: arrayAleatorio
             }
-        })
+        });
         const entrada = await Entrada.findAll({
             where: {
                 titulo
             }
-        })
+        });
         const listadoComentarios = await Comentario.findAll();
         res.render('entradaDetalle', {
             pagina: 'Entrada Detalle',
@@ -114,11 +119,13 @@ const paginaEntradasDetalle = async (req, res) => {
     }
 }
 
-const paginaMas = async (req, res) => {
-    const categorias = await Categoria.findAll();
-    res.render('mas', {
-        pagina: 'mas',
-        categorias
+const paginaClub = async (req, res) => {
+    const scripts = 'paginaClub';
+    const todasCategorias = await Categoria.findAll();
+    res.render('club', {
+        pagina: 'Club de montaña',
+        todasCategorias,
+        scripts
     });
 }
 
@@ -129,5 +136,5 @@ export {
     paginaEntradas,
     paginaEntradasCategoria,
     paginaEntradasDetalle,
-    paginaMas
+    paginaClub
 }

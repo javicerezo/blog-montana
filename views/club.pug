@@ -1,0 +1,47 @@
+extends ./layout/index
+
+block cabecera 
+    include ./layout/bloque_cabecera
+
+block categorias
+    include ./layout/bloque_categorias
+                
+block contenido
+    main.c-club 
+        .c-club__contenedor 
+            h2.c-club__h2 #{pagina}
+            .c-club__parrafo 
+                p.c-club__parrafo-p ¿Quieres salir a la montaña y no encuentras compañeros?, ¿Necesitas que alguien con experiencia te enseñe escalada, barranquismo, esquí...? No busques más, nos ha encontrado. Apúntate a nuestro club y comienza a disfrutar de la montaña en todas sus facetas.
+            .c-club__imagenes
+                p.c-club__imagenes-p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa delectus dolor nobis ullam quibusdam saepe, commodi, facilis minus dolorum sit voluptates corrupti. Earum fugiat quis voluptatum quia voluptate a fugit?Quo eius, quos quidem exercitationem dolor quod minima esse laboriosam minus velit repellendus illo porro labore odit repudiandae suscipit sit! Impedit explicabo rem aspernatur, voluptatem facere laudantium id delectus obcaecati.Aspernatur nobis veritatis atque ab dolor nesciunt dolorem sit veniam eligendi repellat odio libero, magnam nihil pariatur possimus autem harum voluptas aperiam delectus quam suscipit aut ipsa et?
+                .c-club__imagenes-img
+                    img(src="/assets/img/club1.jpg" alt="imagen")
+            .c-club__imagenes.c-club__imagenes--mod
+                p.c-club__imagenes-p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa delectus dolor nobis ullam quibusdam saepe, commodi, facilis minus dolorum sit voluptates corrupti. Earum fugiat quis voluptatum quia voluptate a fugit?Quo eius, quos quidem exercitationem dolor quod minima esse laboriosam minus velit repellendus illo porro labore odit repudiandae suscipit sit! Impedit explicabo rem aspernatur, voluptatem facere laudantium id delectus obcaecati.Aspernatur nobis veritatis atque ab dolor nesciunt dolorem sit veniam eligendi repellat odio libero, magnam nihil pariatur possimus autem harum voluptas aperiam delectus quam suscipit aut ipsa et?
+                .c-club__imagenes-img
+                    img(src="/assets/img/club2.jpg" alt="imagen")
+            .c-club__imagenes
+                p.c-club__imagenes-p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa delectus dolor nobis ullam quibusdam saepe, commodi, facilis minus dolorum sit voluptates corrupti. Earum fugiat quis voluptatum quia voluptate a fugit?Quo eius, quos quidem exercitationem dolor quod minima esse laboriosam minus velit repellendus illo porro labore odit repudiandae suscipit sit! Impedit explicabo rem aspernatur, voluptatem facere laudantium id delectus obcaecati.Aspernatur nobis veritatis atque ab dolor nesciunt dolorem sit veniam eligendi repellat odio libero, magnam nihil pariatur possimus autem harum voluptas aperiam delectus quam suscipit aut ipsa et?
+                .c-club__imagenes-img
+                    img(src="/assets/img/club3.jpg" alt="imagen")
+            form.c-club__form.js-club__form(action='/club' method="POST")
+                h5.c-club__form-h5 Inscríbete con nosotros al club
+                .c-club__form-contenedor
+                    .c-club__fieldsetContenedor
+                        fieldset.c-club__fieldset
+                            p Tu nombre:
+                            input.js-club__fieldset-alias(type="text", name="nombre", value=nombre) 
+                            p Tu correo:
+                            input.c-club__fieldset-correo(type="text", name="email", value=email) 
+                        fieldset.c-club__fieldset
+                            p Pregunta tus dudas:
+                            textarea.js-club__fieldset-textarea(name="comentario", cols="30", rows="10")= comentario
+                        fieldset.c-club__fieldsetContenedor--mod
+                            input.c-button.c-button--amarillo.js-club__fieldset-boton(type="submit", value="enviar")
+            .js-club__contenedorMensaje                            
+                if(mensaje)
+                    each m in mensaje
+                        if(m.tipo == 'alerta')
+                            p.u-mensaje.u-mensaje--alerta= m.contenido
+                        if(m.tipo == 'exito')
+                            p.u-mensaje.u-mensaje--exito= m.contenido              

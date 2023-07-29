@@ -14,23 +14,14 @@ block contenido
                 p.c-inicio__sobreNosotros-p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa delectus dolor nobis ullam quibusdam saepe, commodi, facilis minus dolorum sit voluptates corrupti. Earum fugiat quis voluptatum quia voluptate a fugit?Quo eius, quos quidem exercitationem dolor quod minima esse laboriosam minus velit repellendus illo porro labore odit repudiandae suscipit sit! Impedit explicabo rem aspernatur, voluptatem facere laudantium id delectus obcaecati.Aspernatur nobis veritatis atque ab dolor nesciunt dolorem sit veniam eligendi repellat odio libero, magnam nihil pariatur possimus autem harum voluptas aperiam delectus quam suscipit aut ipsa et?
                 .c-inicio__sobreNosotros-img
                     img(src="/assets/img/portada2.jpg" alt="imagen sobre nosotros")
-            h2.c-inicio__h2 Últimas entradas de blog
             .c-inicio__ultimasEntradas
-            include ./layout/bloque_entradas-recomendadas              
-            
-            
-            h1 #{pagina}
-            h1 #{pagina}
-            h1 #{pagina}
-            h1 #{pagina}
-            h1 #{pagina}
-            h1 #{pagina}
-            h1 #{pagina}
-            h1 #{pagina}
-            h1 #{pagina}
-            h1 #{pagina}
-            h1 #{pagina}
-            h1 #{pagina}
-            h1 #{pagina}
-            h1 #{pagina}
-            h1 #{pagina}
+                h2.c-inicio__h2 Últimas entradas de blog
+                include ./layout/bloque_entradas-recomendadas              
+            .c-inicio__entradasVisitadas
+                h2.c-inicio__h2 Rutas y escaladas recomendadas
+                each categoria in todasCategorias 
+                    include ./layout/bloque_entradas              
+            h2.c-inicio__h2 Club de escala y montaña
+            .c-inicio__clubMontana 
+                p.c-inicio__clubMontana-p ¿Quieres conocernos?
+                a.c-button.c-button--amarillo.c-inicio__clubMontana-input(href="/club") Conocénos

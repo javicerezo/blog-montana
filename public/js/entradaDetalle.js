@@ -38,7 +38,7 @@ import { rellenarinput,
         ui.deshabilitar(btnEnviar);
     });
 
-    aliasInput.addEventListener('blur', e => {
+    aliasInput.addEventListener('input', e => {
         rellenarinput(infoComentario, e);
         let habilitar = comprobarInput(infoComentario);
         if(habilitar) {
@@ -47,7 +47,7 @@ import { rellenarinput,
             ui. deshabilitar(btnEnviar);
         }
     });
-    comentarioinput.addEventListener('blur', e => {
+    comentarioinput.addEventListener('input', e => {
         rellenarinput(infoComentario, e);
         let habilitar = comprobarInput(infoComentario);
         if(habilitar) {

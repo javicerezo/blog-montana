@@ -5,10 +5,12 @@ import {
     paginaEntradas,
     paginaEntradasCategoria,
     paginaEntradasDetalle,
-    paginaMas
+    paginaClub
 } from "../controllers/paginasController.js";
 import { agregarNewsletter } from "../controllers/newsletterController.js";
 import { agregarComentario } from "../controllers/comentariosController.js";
+
+import { incribirClub } from "../controllers/clubController.js";
 
 const router = express.Router();
 
@@ -22,6 +24,7 @@ router.get('/entradas/:categoria', paginaEntradasCategoria);
 router.get('/entradas/:categoria/:titulo', paginaEntradasDetalle);
 router.post('/entradas/:categoria/:titulo', agregarComentario);
 
-router.get('/mas', paginaMas);
+router.get('/club', paginaClub);
+router.post('/club', incribirClub);
 
 export default router;

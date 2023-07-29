@@ -10,19 +10,15 @@
             width: 80%;
         }
     }
-    &__cabecera {
+    &__h2 {
         width: 100%;
         margin: 1rem 0;
+        font-size: 1.5em;
+        text-transform: uppercase;
         @include tablet {
+            font-size: 2.5em;
             margin-bottom: 2rem;
             margin-top: 4rem;
-        }
-        &-h1 {
-            font-size: 1.5em;
-            text-transform: uppercase;
-            @include tablet {
-                font-size: 2.5em;
-            }
         }
     }
     &__paginacion {

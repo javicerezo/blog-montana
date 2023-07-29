@@ -13,7 +13,7 @@ import UI from './clases/UI.js';
         ui.deshabilitar(btnEnviar);
     });
     
-    emailInput.addEventListener('blur', e => {
+    emailInput.addEventListener('input', e => {
         // validamos email con Email Regex
         if (er.test(e.target.value)){
             ui.habilitar(btnEnviar);

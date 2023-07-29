@@ -35,16 +35,12 @@ const agregarComentario = async (req, res) => {
                 titulo
             }
         });
-        const listadoComentarios = await Comentario.findAll({
-            where: {
-                comentarioId
-            }
-        });
         await Comentario.create({
             alias, 
             comentario,
             comentarioId
         })
+        const listadoComentarios = await Comentario.findAll();
         if(mensaje.length === 0){
             mensaje.push({
                 contenido: 'Comentario insertado correctamente. muchas gracias.',

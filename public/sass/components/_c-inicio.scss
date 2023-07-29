@@ -42,4 +42,25 @@
             }
         }
     }
+    // &__entradasVisitadas {
+
+    // }
+    &__clubMontana {
+        margin: 1rem;
+        @include tablet {
+            @include flex(row, nowrap, center, center);
+        }
+        &-p {
+            margin-bottom: 2rem;
+            @include tablet {
+                margin: 0;
+                margin-right: 2rem;
+            }
+        }
+        &-input {
+            @include tablet {
+                margin-left: 2rem;
+            }
+        }
+    }
 }

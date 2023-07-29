@@ -1,0 +1,126 @@
+.c-club {
+    @include flex (column, nowrap, center, center);
+    &__contenedor {
+        @include flex (column, nowrap, center, center);
+        width: 95%;
+        @include tablet {
+            width: 90%;
+            margin: 2rem 0;
+        }
+        @include desktop {
+            width: 80%;
+        }
+    }
+    &__h2 {
+        width: 100%;
+        margin: 1rem 0;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        @include tablet {
+            font-size: 2.5em;
+            margin-bottom: 2rem;
+            margin-top: 4rem;
+        }
+    }
+    &__parrafo {
+        margin: 1rem;
+        @include tablet {
+            width: 90%;
+        }
+        &-p {
+            font-size: 1.1em;
+            @include tablet {
+                font-size: 1.2em;
+            }
+        }
+    }
+    &__imagenes {
+        @include flex(column, nowrap, center, center);
+        margin-bottom: 1rem;
+        @include tablet {
+            @include flex(row, nowrap, space-between, flex-start);
+            width: 90%;
+            margin-bottom: 3rem;
+        }
+        &--mod {
+            @include tablet {
+                @include flex(row-reverse, nowrap, space-between, flex-start);
+            }
+        }
+        &-p {
+            margin: 1rem;
+            @include tablet {
+                width: 50%;
+            }
+        }
+        &-img {
+            margin: 0 1rem;
+            @include tablet {
+                margin: 0;
+                width: 50%;
+                max-width: 21.875rem;
+            }
+        }
+    }
+    &__imagenes:last-child {
+        margin-bottom: 2rem;
+    }
+    &__form {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: map-get($colores, color-secundario-2);
+        margin-bottom: 1rem;
+        @include tablet {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        @include desktop {
+            width: 80%;
+        }
+        &-h5 {
+            font-size: 1.2em;
+            margin-bottom: 1rem;
+            @include tablet {
+                font-weight: bold;
+                font-size: 1.5em;
+                margin-bottom: 1.5rem;
+            }
+        }
+        &-contenedor {
+            @include flex(column, nowrap, center, center);
+            @include tablet {
+                @include flex(row, nowrap, center, center);
+            }
+        }
+    }
+    &__fieldsetContenedor {
+        width: 100%;
+        padding: 0.5rem;
+        @include tablet {
+            padding: 1rem;
+        }
+        &--mod {
+            @include flex(row, column, flex-end, center);
+        }
+    }
+    &__fieldset {
+        width: 100%;
+        margin-bottom: 1rem;
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: map-get($colores, color-secundario);
+            border-radius: 5px;
+        }
+        p {
+            margin: 1rem 0 0.5rem 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+            @include tablet {
+                font-size: 1rem;
+            }
+        }
+    }
+    
+}
