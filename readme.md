@@ -1,11 +1,11 @@
 # Blog de montaña
 ![Imagen del proyecto](https://raw.githubusercontent.com/javicerezo/blog-montana/master/public/assets/img/blog.png)
 
-## Ejemplo en vivo
-- [Haz click para ver el proyecto](https://javicerezo.github.io/blog-montana/) 🚀
+<!-- ## Ejemplo en vivo
+- [Haz click para ver el proyecto](https://javicerezo.github.io/blog-montana/) 🚀 -->
 
 ## Descripción 📑
-Blog de montaña
+Sitio web tipo blog dedicado a deportes de montaña. Programado en NodeJs, NextJs y arquitectura MVC, usando tablas creadas con MySQL.
 
 ## Tecnologías 🛠
 <!-- Iconos sacados de y https://github.com/alexandresanlim/Badges4-README.md-Profile -->
@@ -31,7 +31,10 @@ Si quieres hechar un vistazo al proyecto, te recomiendo:
 [![Correo](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](<mailto:jc.webmob@gmail.com>)
 
 ## Instalación 
-Este proyecto no necesita de instalación. Simplemente, haz doble click en el enlace del ejemplo en vivo o descargalo, y ejecuta el .html
+Este proyecto necesita instalación de NodeJs. Para ello puedes hacerlo desde su web:
++ Puedes instalar NodeJS desde su página [https://nodejs.org/es](https://nodejs.org/es).
+Una vez instalado Node, clona el repositorio a local, y ejecuta "npm install" en la terminal, para que se instalen todos los paquetes necesarios del "package.json".
+Por último ejecuta "npm run dev", que es el script del "package.json" para ejecutar el servidor y poder ver el proyecto.
   
 ## Licencia 📄
 MIT Public License v3.0

@@ -18,7 +18,6 @@ import { rellenarinput,
     const ui = new UI();
 
     const fechaEntrada = document.querySelector('.c-entradaDetalle__comentario-fecha');
-    console.log(fechaEntrada)
     const date =  new Date(fechaEntrada.textContent).toDateString();
     fechaEntrada.textContent = date;
     
@@ -57,4 +56,4 @@ import { rellenarinput,
         }
     });
 
-})()
+})();
