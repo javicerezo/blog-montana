@@ -34,7 +34,8 @@ Si quieres hechar un vistazo al proyecto, te recomiendo:
 Este proyecto necesita instalación de NodeJs. Para ello puedes hacerlo desde su web:
 + Puedes instalar NodeJS desde su página [https://nodejs.org/es](https://nodejs.org/es).
 Una vez instalado Node, clona el repositorio a local, y ejecuta "npm install" en la terminal, para que se instalen todos los paquetes necesarios del "package.json".
-Por último ejecuta "npm run dev", que es el script del "package.json" para ejecutar el servidor y poder ver el proyecto.
+Por último ejecuta "npm run dev", que es el script del "package.json" para ejecutar el servidor de Node y poder ver el proyecto.
+Ve al navegador, y escribe LocalHost:4000 en el apartado para las URls.
   
 ## Licencia 📄
 MIT Public License v3.0
