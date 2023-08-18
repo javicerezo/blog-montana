@@ -14,7 +14,6 @@ Sitio web tipo blog dedicado a deportes de montaña. Programado en NodeJs, NextJ
 [![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://es.wikipedia.org/wiki/Sass)
 [![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://es.wikipedia.org/wiki/JavaScript)
 [![MYSQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)](https://es.wikipedia.org/wiki/MySQL)
-[![NEXT](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://es.wikipedia.org/wiki/NeXT)
 
 ## Vista previa del proyecto
 Si quieres hechar un vistazo al proyecto, te recomiendo:
