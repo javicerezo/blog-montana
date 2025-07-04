@@ -17,12 +17,12 @@ const db = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.D
         idle: 10000
     },
     operatorAliases: false,
-    // dialectOptions: {
-    //     ssl: {
-    //         require: true,
-    //         rejectUnauthorized: false
-    //     }
-    // }
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false
+        }
+    }
 });
 
 export default db;
