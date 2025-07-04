@@ -7,6 +7,7 @@ export const Newsletter = db.define ('newsletters', {
     }
 });
 
+// si no existe la tabla, la crea
 Newsletter.sync()
     .then(() => {
         console.log("Tabla 'newsletters' sincronizada correctamente.")

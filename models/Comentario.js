@@ -18,6 +18,7 @@ export const Comentario = db.define ('comentarios', {
     }
 });
 
+// si no existe la tabla, la crea
 Comentario.sync()
     .then(() => {
         console.log("Tabla 'comentarios' sincronizada correctamente.")

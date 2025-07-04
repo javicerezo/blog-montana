@@ -7,6 +7,7 @@ export const Categoria = db.define ('categorias', {
     }
 });
 
+// si no existe la tabla, la crea
 Categoria.sync()
     .then(() => {
         console.log("Tabla 'categorias' sincronizada correctamente.")

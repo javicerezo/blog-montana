@@ -21,6 +21,7 @@ export const Entrada = db.define('entradas', {
     }
 });
 
+// si no existe la tabla, la crea
 Entrada.sync()
     .then(() => {
         console.log("Tabla 'entradas' sincronizada correctamente.")
