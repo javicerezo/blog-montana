@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "sass": "sass --watch public/sass:public/css"
+    "sass": "sass --watch public/sass:public/css",
+    "seed": "node seed.js"    
   },
   "keywords": [
     "SASS",
