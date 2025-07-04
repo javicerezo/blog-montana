@@ -12,11 +12,19 @@ export const Entrada = db.define('entradas', {
         type: Sequelize.STRING
     },
     tipoId: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
         // 1-rutas, 2-noticias, 3-consejos, 4-test, 5-reportajes, 6-preparacion fisica, 
     },
     updatedAt: {
         type: Sequelize.DATE
         // fecha de modificación de la entrada
     }
-})
+});
+
+Entrada.sync()
+    .then(() => {
+        console.log("Tabla 'entradas' sincronizada correctamente.")
+    })
+    .catch(() => {
+        console.log("Error al sincronizar la tabla 'entradas'")
+    });
