@@ -1,5 +1,5 @@
 # Blog de montaña
-![Imagen del proyecto](https://raw.githubusercontent.com/javicerezo/blog-montana/master/public/assets/img/blog.png)
+![Imagen del proyecto](https://raw.githubusercontent.com/javicerezo/blog-montana/master/public/assets/imgs/preview.png)
 
 ## Demo de producción
 - [Haz click para ver el proyecto](https://blog-montana-production.up.railway.app/) 🚀
