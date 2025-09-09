@@ -3,10 +3,9 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const db = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT || 3000,
-    dialect: 'mysql',
+const db = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres',
+    protocol: 'postgres',
     define: {
         timestamps: false
     },
@@ -16,7 +15,13 @@ const db = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.D
         acquire: 30000,
         idle: 10000
     },
-    operatorAliases: false
+    operatorAliases: false,
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false
+        }
+    }
 });
 
 export default db;
